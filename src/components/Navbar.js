@@ -69,10 +69,9 @@ const Navbar = () => {
 
 
   return (
-    <header className="fixed top-0 left-0 w-full flex items-center justify-between px-32 py-8 font-medium z-50 bg-light dark:bg-dark dark:text-light
+    <header className="fixed top-0 left-0 w-full flex items-center justify-between px-32 py-8 font-medium z-50 bg-light/95 dark:bg-dark/95 dark:text-light
 lg:px-16 md:px-12 sm:px-8
     ">
-      
       <button
         type="button"
         className=" flex-col items-center justify-center hidden lg:flex"
