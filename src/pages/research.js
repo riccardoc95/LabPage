@@ -143,7 +143,7 @@ export default function Research() {
               time="9 min read"
               summary="Learn how to build a custom pagination component in ReactJS from scratch. Follow this 
               step-by-step guide to integrate Pagination component in your ReactJS project."
-              link="https://devdreaming.com/blogs/create-pagination-component-reactjs"
+              link="/"
             />
 
             <FeaturedArticle
@@ -153,7 +153,7 @@ export default function Research() {
               summary="Learn how to create stunning loading screens in React with 3 different methods. 
               Discover how to use React-Loading, React-Lottie & build a custom loading screen. Improve the 
               user experience."
-              link="https://devdreaming.com/blogs/create-3-different-types-of-loading-screens-in-react"
+              link="/"
             />
           </ul>
 
@@ -166,37 +166,37 @@ export default function Research() {
               title="form validation in reactjs: build a reusable custom hook for inputs and error handling"
               img={blog1}
               date="January 27, 2023"
-              link="https://devdreaming.com/blogs/react-form-validation-custom-hook"
+              link="/"
             />
             <Article
               title="silky smooth scrolling in reactjs: a step-by-step guide for react developers"
               img={blog1}
               date="January 30, 2023"
-              link="https://devdreaming.com/blogs/smooth-scrolling-in-react-js"
+              link="/"
             />
             <Article
               title="creating an efficient modal component in react using hooks and portals"
               img={blog1}
               date="January 29, 2023"
-              link="https://devdreaming.com/blogs/create-efficient-modal-react-portals"
+              link="/"
             />
             <Article
               title="build a fabulous todo list app with react, redux and framer-motion"
               img={blog1}
               date="January 28, 2023"
-              link="https://devdreaming.com/blogs/build-react-redux-framer-motion-todo-app"
+              link="/"
             />
             <Article
               title="redux simplified: a beginner's guide for web developers"
               img={blog1}
               date="January 31, 2023"
-              link="https://devdreaming.com/blogs/redux-simply-explained"
+              link="/"
             />
             <Article
               title="what is higher order component (hoc) in react?"
               date="January 4, 2023"
               img={blog1}
-              link="https://devdreaming.com/blogs/higher-order-component-hoc-react"
+              link="/"
             />
           </ul>
         </Layout>

@@ -182,8 +182,8 @@ export default function Tools() {
                 title="Crypto Screener Application"
                 summary="A feature-rich Crypto Screener App using React, Tailwind CSS, Context API, React Router and Recharts. It shows detail regarding almost all the cryptocurrency. You can easily convert the price in your local currency."
                 img={proj1}
-                link="https://devdreaming.com/videos/build-crypto-screener-app-with-react-tailwind-css"
-                github="https://github.com/codebucks27/CryptoBucks-Final-Code"
+                link="/"
+                github="/"
               />
             </div>
             <div className="col-span-6 sm:col-span-12">
@@ -191,8 +191,8 @@ export default function Tools() {
                 type="Website Template"
                 title="NFT collection Website"
                 img={proj1}
-                link="https://devdreaming.com/videos/create-nft-collection-website-reactjs"
-                github="https://github.com/codebucks27/The-Weirdos-NFT-Website-Starter-Code"
+                link="/"
+                github="/"
               />
             </div>
             <div className="col-span-6 sm:col-span-12">
@@ -200,8 +200,8 @@ export default function Tools() {
                 type="Website"
                 title="Fashion Studio Website"
                 img={proj1}
-                link="https://devdreaming.com/videos/build-stunning-fashion-studio-website-with-reactJS-locomotive-scroll-gsap"
-                github="https://github.com/codebucks27/wibe-studio"
+                link="/"
+                github="/"
               />
             </div>
             <div className="col-span-12">
@@ -210,8 +210,8 @@ export default function Tools() {
                 title="React Portfolio Website"
                 summary="A professional portfolio website using React JS, Framer-motion, and Styled-components. It has smooth page transitions, cool background effects, unique design and it is mobile responsive."
                 img={proj1}
-                link="https://devdreaming.com/videos/build-stunning-portfolio-website-react-js-framer-motion"
-                github="https://github.com/codebucks27/react-portfolio-final"
+                link="/"
+                github="/"
               />
             </div>
             <div className="col-span-6 sm:col-span-12">
@@ -219,8 +219,8 @@ export default function Tools() {
                 type="Website Template"
                 img={proj1}
                 title="Agency Website Template"
-                link="https://devdreaming.com/videos/build-stunning-fashion-studio-website-with-reactJS-locomotive-scroll-gsap"
-                github="https://github.com/codebucks27/wibe-studio"
+                link="/"
+                github="/"
               />
             </div>
             <div className="col-span-6 sm:col-span-12">
@@ -228,8 +228,8 @@ export default function Tools() {
                 type="Blog Website"
                 img={proj1}
                 title="DevDreaming"
-                link="https://devdreaming.com"
-                github="https://github.com/codebucks27"
+                link="/"
+                github="/"
               />
             </div>
           </div>
