@@ -90,7 +90,7 @@ lg:px-16 md:px-12 sm:px-8
       >
       <nav className="flex items-center justify-center">
         <CustomLink className="mx-4" href="/" title="Home" />
-        <CustomLink className="mx-4" href="/about" title="About Us" />
+        <CustomLink className="mx-4" href="/about" title="About" />
         <CustomLink className="mx-4" href="/people" title="People" />
         <CustomLink className="mx-4" href="/src/pages/projects" title="Projects" />
         <CustomLink className="mx-4" href="/src/pages/tools" title="Tools" />
@@ -180,7 +180,7 @@ lg:px-16 md:px-12 sm:px-8
       >
       <nav className="flex items-center justify-center flex-col">
         <CustomMobileLink toggle={handleClick} className="ml-4 lg:m-0 lg:my-2" href="/" title="Home" />
-        <CustomMobileLink toggle={handleClick} className="ml-4 lg:m-0 lg:my-2" href="/about" title="About Us" />
+        <CustomMobileLink toggle={handleClick} className="ml-4 lg:m-0 lg:my-2" href="/about" title="About" />
         <CustomMobileLink toggle={handleClick} className="ml-4 lg:m-0 lg:my-2" href="/people" title="People" />
         <CustomMobileLink toggle={handleClick} className="ml-4 lg:m-0 lg:my-2" href="/src/pages/projects" title="Projects" />
         <CustomMobileLink toggle={handleClick} className="ml-4 lg:m-0 lg:my-2" href="/src/pages/tools" title="Tools" />
