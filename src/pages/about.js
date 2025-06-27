@@ -61,7 +61,7 @@ export default function About() {
               <div className="text-center">
                 <h2 className="text-3xl font-semibold mb-4">Our Projects</h2>
                 <p className="text-base text-gray-700 dark:text-gray-300 mb-4">
-                  Discover the cutting-edge research and development initiatives we're currently working on — from scientific discovery to industrial innovation.
+                  Discover the cutting-edge research and development initiatives we are currently working on, from scientific discovery to industrial innovation.
                 </p>
                 <button
                     className="px-6 py-3 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition"
