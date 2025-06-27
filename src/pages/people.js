@@ -40,7 +40,7 @@ const PersonCard = ({ name, role, img, bio = "", link }) => (
                 {/* Bio e link */}
                 <div className="text-sm sm:text-base relative group">
                     <p className="px-2 line-clamp-3 cursor-help">
-                        {bio || "No bio provided."}
+                        {bio || "No bio."}
                     </p>
 
                     {/* Tooltip al passaggio del mouse */}
