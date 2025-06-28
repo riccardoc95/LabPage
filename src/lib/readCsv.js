@@ -8,7 +8,7 @@ import Papa from "papaparse";
  * @returns {Array<Object>}
  */
 export function readCsv(filename) {
-    const filePath = path.join(process.cwd(), "data", filename);
+    const filePath = path.join(process.cwd(), "public", "data", filename);
     const file = fs.readFileSync(filePath, "utf8");
 
     const { data } = Papa.parse(file, {
