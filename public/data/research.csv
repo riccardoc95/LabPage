@@ -1,9 +1,9 @@
 type,title,time,summary,date,link,img
-featured,Build a Custom Pagination Component in ReactJS,9 min read,Learn how to build a pagination component in ReactJS.,,/,/images/research/blank.png
-featured,Creating Stunning Loading Screens in React,10 min read,Create stunning loading screens using React-Loading and Lottie.,,/,/images/research/blank.png
-article,Form Validation in ReactJS,,,"January 27, 2023",/,/images/research/blank.png
-article,Silky Smooth Scrolling in ReactJS,,,"January 30, 2023",/,/images/research/blank.png
-article,Creating an Efficient Modal Component in React,,,"January 29, 2023",/,/images/research/blank.png
-article,Build a Fabulous Todo List App,,,"January 28, 2023",/,/images/research/blank.png
-article,Redux Simplified,,,"January 31, 2023",/,/images/research/blank.png
-article,What is a Higher Order Component (HOC)?,,,"January 4, 2023",/,/images/research/blank.png
+featured,Build a Custom Pagination Component in ReactJS,9 min read,Learn how to build a pagination component in ReactJS.,,/,images/research/blank.png
+featured,Creating Stunning Loading Screens in React,10 min read,Create stunning loading screens using React-Loading and Lottie.,,/,images/research/blank.png
+article,Form Validation in ReactJS,,,"January 27, 2023",/,images/research/blank.png
+article,Silky Smooth Scrolling in ReactJS,,,"January 30, 2023",/,images/research/blank.png
+article,Creating an Efficient Modal Component in React,,,"January 29, 2023",/,images/research/blank.png
+article,Build a Fabulous Todo List App,,,"January 28, 2023",/,images/research/blank.png
+article,Redux Simplified,,,"January 31, 2023",/,images/research/blank.png
+article,What is a Higher Order Component (HOC)?,,,"January 4, 2023",/,images/research/blank.png
