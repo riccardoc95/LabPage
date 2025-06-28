@@ -1,16 +1,14 @@
 import AnimatedText from "@/components/AnimatedText";
-import { motion, useMotionValue, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import Head from "next/head";
 import Image from "next/image";
-import blog1 from "../../public/images/research/blank.png";
-
 import Layout from "@/components/Layout";
 import Link from "next/link";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import TransitionEffect from "@/components/TransitionEffect";
+import { readCsv } from "@/lib/readCsv"; // shared CSV utility
 
 const FramerImage = motion(Image);
-
 
 const Post = ({ img, title, date, link, description }) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -24,12 +22,7 @@ const Post = ({ img, title, date, link, description }) => {
             transition={{ duration: 0.5, ease: "easeInOut" }}
             className="relative w-full p-4 my-4 rounded-xl cursor-pointer bg-light text-dark border border-solid border-dark border-r-4 border-b-4 dark:bg-dark dark:border-light"
         >
-            {/* Title & Date */}
-            <Link
-                href={link}
-                target={"_blank"}
-                className="relative"
-            >
+            <Link href={link} target="_blank" className="relative">
                 <h2 className="capitalize text-xl font-semibold hover:underline dark:text-light md:text-lg xs:text-base">
                     {title}
                 </h2>
@@ -38,7 +31,6 @@ const Post = ({ img, title, date, link, description }) => {
         {date}
       </span>
 
-            {/* Expandable Content */}
             <AnimatePresence>
                 {isOpen && (
                     <motion.div
@@ -51,7 +43,7 @@ const Post = ({ img, title, date, link, description }) => {
                     >
                         <FramerImage
                             src={img}
-                            alt={name}
+                            alt={title}
                             className="w-full h-full object-cover"
                             whileHover={{ scale: 1.05 }}
                             transition={{ duration: 0.2 }}
@@ -68,7 +60,7 @@ const Post = ({ img, title, date, link, description }) => {
     );
 };
 
-export default function News() {
+export default function News({ posts }) {
     return (
         <>
             <Head>
@@ -93,51 +85,27 @@ export default function News() {
                     </h2>
 
                     <ul className="flex flex-col items-center relative w-full max-w-4xl mx-auto">
-                        <Post
-                            title="Mastering Form Validation in React"
-                            img={blog1}
-                            date="Jan 27, 2023"
-                            link="/"
-                            description="Discover how to build clean, reusable validation hooks in React. Perfect your form handling with less code and better UX."
-                        />
-                        <Post
-                            title="Smooth Scrolling in React Made Simple"
-                            img={blog1}
-                            date="Jan 30, 2023"
-                            link="/"
-                            description="Step-by-step guide to implementing seamless scroll effects in React using native techniques. No libraries needed!"
-                        />
-                        <Post
-                            title="Creating Accessible Modals with React Hooks"
-                            img={blog1}
-                            date="Jan 29, 2023"
-                            link="/"
-                            description="Learn how to design responsive, accessible modal components using React Hooks and the Portal API."
-                        />
-                        <Post
-                            title="Animated Todo App with Redux & Framer Motion"
-                            img={blog1}
-                            date="Jan 28, 2023"
-                            link="/"
-                            description="Build a polished Todo app from scratch using Redux for state management and Framer Motion for slick animations."
-                        />
-                        <Post
-                            title="Beginner’s Guide to Redux in React"
-                            img={blog1}
-                            date="Jan 31, 2023"
-                            link="/"
-                            description="Start your Redux journey with this beginner-friendly guide. Learn the core concepts and build your first Redux-powered component."
-                        />
-                        <Post
-                            title="React HOCs Explained: When and Why to Use Them"
-                            img={blog1}
-                            date="Jan 4, 2023"
-                            link="/"
-                            description="Demystify higher-order components in React. Understand how they work, when to use them, and how to create your own."
-                        />
+                        {posts.map((post, idx) => (
+                            <Post key={idx} {...post} />
+                        ))}
                     </ul>
                 </Layout>
             </main>
         </>
     );
+}
+
+export async function getStaticProps() {
+    const data = readCsv("news.csv");
+
+    const posts = data.map((item) => ({
+        ...item,
+        img: item.img || "/images/research/blank.png",
+    }));
+
+    return {
+        props: {
+            posts,
+        },
+    };
 }

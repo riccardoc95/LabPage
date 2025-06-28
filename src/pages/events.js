@@ -2,15 +2,13 @@ import AnimatedText from "@/components/AnimatedText";
 import { motion, useMotionValue, AnimatePresence } from "framer-motion";
 import Head from "next/head";
 import Image from "next/image";
-import blog1 from "../../public/images/research/blank.png";
-
 import Layout from "@/components/Layout";
 import Link from "next/link";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import TransitionEffect from "@/components/TransitionEffect";
+import { readCsv } from "@/lib/readCsv"; // Shared CSV reader
 
 const FramerImage = motion(Image);
-
 
 const Event = ({ img, title, date, link, description }) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -24,12 +22,7 @@ const Event = ({ img, title, date, link, description }) => {
             transition={{ duration: 0.5, ease: "easeInOut" }}
             className="relative w-full p-4 my-4 rounded-xl cursor-pointer bg-light text-dark border border-solid border-dark border-r-4 border-b-4 dark:bg-dark dark:border-light"
         >
-            {/* Title & Date */}
-            <Link
-                href={link}
-                target={"_blank"}
-                className="relative"
-            >
+            <Link href={link} target={"_blank"} className="relative">
                 <h2 className="capitalize text-xl font-semibold hover:underline dark:text-light md:text-lg xs:text-base">
                     {title}
                 </h2>
@@ -38,7 +31,6 @@ const Event = ({ img, title, date, link, description }) => {
         {date}
       </span>
 
-            {/* Expandable Content */}
             <AnimatePresence>
                 {isOpen && (
                     <motion.div
@@ -51,7 +43,7 @@ const Event = ({ img, title, date, link, description }) => {
                     >
                         <FramerImage
                             src={img}
-                            alt={name}
+                            alt={title}
                             className="w-full h-full object-cover"
                             whileHover={{ scale: 1.05 }}
                             transition={{ duration: 0.2 }}
@@ -68,7 +60,7 @@ const Event = ({ img, title, date, link, description }) => {
     );
 };
 
-export default function Events() {
+export default function Events({ events }) {
     return (
         <>
             <Head>
@@ -93,51 +85,27 @@ export default function Events() {
                     </h2>
 
                     <ul className="flex flex-col items-center relative w-full max-w-4xl mx-auto">
-                        <Event
-                            title="React Form Validation: Build Custom Hooks"
-                            img={blog1}
-                            date="Jan 27, 2023"
-                            link="/"
-                            description="Learn how to create reusable form validation hooks in React. A must-know for handling inputs and errors efficiently."
-                        />
-                        <Event
-                            title="Smooth Scrolling in React: Step-by-Step Guide"
-                            img={blog1}
-                            date="Jan 30, 2023"
-                            link="/"
-                            description="Enhance UX by implementing silky smooth scrolling in your React app. No external libraries needed!"
-                        />
-                        <Event
-                            title="Build a Powerful Modal Using Hooks and Portals"
-                            img={blog1}
-                            date="Jan 29, 2023"
-                            link="/"
-                            description="Discover how to create flexible and accessible modals in React using Hooks and the Portal API."
-                        />
-                        <Event
-                            title="Todo App With Redux & Framer Motion"
-                            img={blog1}
-                            date="Jan 28, 2023"
-                            link="/"
-                            description="Build a beautiful and animated Todo app using React, Redux, and Framer Motion."
-                        />
-                        <Event
-                            title="Redux Demystified: A Beginner’s Guide"
-                            img={blog1}
-                            date="Jan 31, 2023"
-                            link="/"
-                            description="Confused by Redux? Learn it step-by-step in this hands-on event designed for frontend newcomers."
-                        />
-                        <Event
-                            title="Understanding Higher Order Components in React"
-                            img={blog1}
-                            date="Jan 4, 2023"
-                            link="/"
-                            description="Get to grips with HOCs in React: what they are, when to use them, and how to build your own."
-                        />
+                        {events.map((event, idx) => (
+                            <Event key={idx} {...event} />
+                        ))}
                     </ul>
                 </Layout>
             </main>
         </>
     );
+}
+
+export async function getStaticProps() {
+    const data = readCsv("events.csv");
+
+    const events = data.map((event) => ({
+        ...event,
+        img: event.img || "/images/research/blank.png",
+    }));
+
+    return {
+        props: {
+            events,
+        },
+    };
 }
