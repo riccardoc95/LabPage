@@ -1,6 +1,6 @@
 type,title,summary,img,link,github,featured
-Website,NFT collection Website,,/images/projects/blank.png,/,/,false
-Website,Fashion Studio Website,,/images/projects/blank.png,/,/,false
-Portfolio Website,React Portfolio Website,"Professional portfolio using React JS, Framer-motion",/images/projects/blank.png,/,/,true
-Website Template,Agency Website Template,,/images/projects/blank.png,/,/,false
-Blog Website,DevDreaming,,/images/projects/blank.png,/,/,false
+Website,NFT collection Website,,images/projects/blank.png,/,/,false
+Website,Fashion Studio Website,,images/projects/blank.png,/,/,false
+Portfolio Website,React Portfolio Website,"Professional portfolio using React JS, Framer-motion",images/projects/blank.png,/,/,true
+Website Template,Agency Website Template,,images/projects/blank.png,/,/,false
+Blog Website,DevDreaming,,images/projects/blank.png,/,/,false
