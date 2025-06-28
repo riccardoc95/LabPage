@@ -88,7 +88,7 @@ export async function getStaticProps() {
     const projects = data.map((project) => ({
         ...project,
         featured: project.featured === "true",
-        img: project.img || "/images/projects/blank.png",
+        img: project.img || "images/projects/blank.png",
     }));
 
     return {

@@ -145,7 +145,7 @@ export async function getStaticProps() {
             time: item.time,
             summary: item.summary,
             link: item.link,
-            img: item.img || "/images/research/blank.png",
+            img: item.img || "images/research/blank.png",
         }));
 
     const articles = data
@@ -154,7 +154,7 @@ export async function getStaticProps() {
             title: item.title,
             date: item.date,
             link: item.link,
-            img: item.img || "/images/research/blank.png",
+            img: item.img || "images/research/blank.png",
         }));
 
     return {

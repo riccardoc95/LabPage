@@ -100,7 +100,7 @@ export async function getStaticProps() {
 
     const posts = data.map((item) => ({
         ...item,
-        img: item.img || "/images/research/blank.png",
+        img: item.img || "images/research/blank.png",
     }));
 
     return {

@@ -100,7 +100,7 @@ export async function getStaticProps() {
 
     const events = data.map((event) => ({
         ...event,
-        img: event.img || "/images/research/blank.png",
+        img: event.img || "images/research/blank.png",
     }));
 
     return {

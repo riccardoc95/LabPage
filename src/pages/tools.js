@@ -88,7 +88,7 @@ export async function getStaticProps() {
   const tools = data.map((tool) => ({
     ...tool,
     featured: tool.featured === "true",
-    img: tool.img || "/images/tools/blank.png",
+    img: tool.img || "images/tools/blank.png",
   }));
 
   return {

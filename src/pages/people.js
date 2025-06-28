@@ -16,7 +16,7 @@ export async function getStaticProps() {
 
     const people = data.map((person) => ({
         ...person,
-        img: person.img || "/images/people/blank.png",
+        img: person.img || "images/people/blank.png",
     }));
 
     return {
