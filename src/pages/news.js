@@ -6,8 +6,15 @@ import Layout from "@/components/Layout";
 import Link from "next/link";
 import { useState } from "react";
 import TransitionEffect from "@/components/TransitionEffect";
-import { readCsv } from "@/lib/readCsv"; // shared CSV utility
+import data from "@/data/news.json";
 
+export async function getStaticProps() {
+    return {
+        props: {
+            data,
+        },
+    };
+}
 const FramerImage = motion(Image);
 
 const Post = ({ img, title, date, link, description }) => {
@@ -60,7 +67,7 @@ const Post = ({ img, title, date, link, description }) => {
     );
 };
 
-export default function News({ posts }) {
+export default function News({ data }) {
     return (
         <>
             <Head>
@@ -85,7 +92,7 @@ export default function News({ posts }) {
                     </h2>
 
                     <ul className="flex flex-col items-center relative w-full max-w-4xl mx-auto">
-                        {posts.map((post, idx) => (
+                        {data.map((post, idx) => (
                             <Post key={idx} {...post} />
                         ))}
                     </ul>
@@ -95,17 +102,4 @@ export default function News({ posts }) {
     );
 }
 
-export async function getStaticProps() {
-    const data = readCsv("news.csv");
 
-    const posts = data.map((item) => ({
-        ...item,
-        img: item.img || "images/research/blank.png",
-    }));
-
-    return {
-        props: {
-            posts,
-        },
-    };
-}

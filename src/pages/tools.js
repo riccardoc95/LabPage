@@ -5,7 +5,15 @@ import { motion } from "framer-motion";
 import Head from "next/head";
 import Link from "next/link";
 import TransitionEffect from "@/components/TransitionEffect";
-import { readCsv } from "@/lib/readCsv";
+import data from "@/data/tools.json";
+
+export async function getStaticProps() {
+    return {
+        props: {
+            data,
+        },
+    };
+}
 
 // Usa <motion.img> per supportare immagini dinamiche
 const FramerImage = motion.img;
@@ -82,22 +90,6 @@ const Tool = ({ title, type, img, link, github }) => {
   );
 };
 
-export async function getStaticProps() {
-  const data = readCsv("tools.csv");
-
-  const tools = data.map((tool) => ({
-    ...tool,
-    featured: tool.featured === "true",
-    img: tool.img || "images/tools/blank.png",
-  }));
-
-  return {
-    props: {
-      tools,
-    },
-  };
-}
-
 export default function tools({ tools }) {
   return (
       <>
@@ -115,7 +107,7 @@ export default function tools({ tools }) {
                 className="mb-16 !text-8xl !leading-tight lg:!text-7xl sm:mb-8 sm:!text-6xl xs:!text-4xl"
             />
             <div className="grid grid-cols-12 gap-24 gap-y-32 xl:gap-x-16 lg:gap-x-8 md:gap-y-24 sm:gap-x-0">
-              {tools.map((tool, index) => (
+              {data.map((tool, index) => (
                   <div
                       key={index}
                       className={`${tool.featured ? "col-span-12" : "col-span-6 sm:col-span-12"}`}

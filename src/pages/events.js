@@ -6,7 +6,17 @@ import Layout from "@/components/Layout";
 import Link from "next/link";
 import { useState } from "react";
 import TransitionEffect from "@/components/TransitionEffect";
-import { readCsv } from "@/lib/readCsv"; // Shared CSV reader
+
+import data from "@/data/events.json";
+
+export async function getStaticProps() {
+    return {
+        props: {
+            data,
+        },
+    };
+}
+
 
 const FramerImage = motion(Image);
 
@@ -60,7 +70,7 @@ const Event = ({ img, title, date, link, description }) => {
     );
 };
 
-export default function Events({ events }) {
+export default function Events({ data }) {
     return (
         <>
             <Head>
@@ -85,7 +95,7 @@ export default function Events({ events }) {
                     </h2>
 
                     <ul className="flex flex-col items-center relative w-full max-w-4xl mx-auto">
-                        {events.map((event, idx) => (
+                        {data.map((event, idx) => (
                             <Event key={idx} {...event} />
                         ))}
                     </ul>
@@ -95,17 +105,3 @@ export default function Events({ events }) {
     );
 }
 
-export async function getStaticProps() {
-    const data = readCsv("events.csv");
-
-    const events = data.map((event) => ({
-        ...event,
-        img: event.img || "images/research/blank.png",
-    }));
-
-    return {
-        props: {
-            events,
-        },
-    };
-}

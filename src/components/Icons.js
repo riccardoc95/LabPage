@@ -427,6 +427,68 @@ export const MoonIcon = ({ className, ...rest }) => (
   </svg>
 );
 
+
+export const EmailIcon = (props) => (
+    <svg
+        {...props}
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={2}
+        viewBox="0 0 24 24"
+        className="w-5 h-5"
+    >
+      <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M16.5 4h-9A2.5 2.5 0 005 6.5v11A2.5 2.5 0 007.5 20h9a2.5 2.5 0 002.5-2.5v-11A2.5 2.5 0 0016.5 4z"
+      />
+      <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M5 7l7 5 7-5"
+      />
+    </svg>
+);
+
+export const GoogleScholarIcon = (props) => (
+    <svg
+        {...props}
+        viewBox="0 0 48 48"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        className="w-5 h-5"
+    >
+      <path
+          d="M24 6L6 18l18 12 18-12L24 6zm0 5.1L37.2 18 24 26.9 10.8 18 24 11.1zM6 30v6h36v-6H6zm3 3h30v-1.5H9V33z"
+          fill="currentColor"
+      />
+    </svg>
+);
+
+export const ScopusIcon = (props) => (
+    <svg
+        {...props}
+        viewBox="0 0 32 32"
+        fill="currentColor"
+        xmlns="http://www.w3.org/2000/svg"
+        className="w-5 h-5"
+    >
+      <circle cx="16" cy="16" r="16" />
+      <text
+          x="16"
+          y="21"
+          textAnchor="middle"
+          fontSize="16"
+          fill="#fff"
+          fontFamily="Arial, sans-serif"
+          fontWeight="bold"
+      >
+        S
+      </text>
+    </svg>
+);
+
+
 export const CircularText = ({ className, ...rest }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"

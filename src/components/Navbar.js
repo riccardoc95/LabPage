@@ -91,9 +91,9 @@ lg:px-16 md:px-12 sm:px-8
         <CustomLink className="mx-4" href="/" title="Home" />
         <CustomLink className="mx-4" href="/about" title="About" />
         <CustomLink className="mx-4" href="/people" title="People" />
-        <CustomLink className="mx-4" href="/projects" title="Projects" />
+        <CustomLink className="mx-4" href="/research" title="Research Area" />
+        <CustomLink className="mx-4" href="/publications" title="Publications" />
         <CustomLink className="mx-4" href="/tools" title="Tools" />
-        <CustomLink className="mx-4" href="/research" title="Research" />
         <CustomLink className="mx-4" href="/events" title="Events" />
         <CustomLink className="mx-4" href="/news" title="News" />
       </nav>
@@ -181,9 +181,9 @@ lg:px-16 md:px-12 sm:px-8
         <CustomMobileLink toggle={handleClick} className="ml-4 lg:m-0 lg:my-2" href="/" title="Home" />
         <CustomMobileLink toggle={handleClick} className="ml-4 lg:m-0 lg:my-2" href="/about" title="About" />
         <CustomMobileLink toggle={handleClick} className="ml-4 lg:m-0 lg:my-2" href="/people" title="People" />
-        <CustomMobileLink toggle={handleClick} className="ml-4 lg:m-0 lg:my-2" href="/projects" title="Projects" />
+        <CustomMobileLink toggle={handleClick} className="ml-4 lg:m-0 lg:my-2" href="/src/pages/research" title="Research" />
         <CustomMobileLink toggle={handleClick} className="ml-4 lg:m-0 lg:my-2" href="/tools" title="Tools" />
-        <CustomMobileLink toggle={handleClick} className="ml-4 lg:m-0 lg:my-2" href="/research" title="Research" />
+        <CustomMobileLink toggle={handleClick} className="ml-4 lg:m-0 lg:my-2" href="/src/pages/publications" title="Publications" />
         <CustomMobileLink toggle={handleClick} className="ml-4 lg:m-0 lg:my-2" href="/events" title="Events" />
         <CustomMobileLink toggle={handleClick} className="ml-4 lg:m-0 lg:my-2" href="/news" title="News" />
       </nav>
