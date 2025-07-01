@@ -155,7 +155,7 @@ export default function Publications() {
                         className="!text-8xl !leading-tight mb-16 lg:!text-7xl sm:!text-6xl xs:!text-4xl sm:mb-8"
                     />
 
-                    <h2 className="font-bold text-4xl w-full text-center mt-32 my-16">All Articles</h2>
+                    {/* <h2 className="font-bold text-4xl w-full text-center mt-32 my-16">All Articles</h2>*/}
 
                     <ul className="flex flex-col items-center relative">
                         {bibEntries.map((entryObj, idx) => (
