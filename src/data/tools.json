@@ -1,12 +1,12 @@
 [
   {
-    "type": "Website",
-    "title": "NFT collection Website",
-    "summary": "",
-    "img": "images/projects/blank.png",
-    "link": "/",
-    "github": "/",
-    "featured": false
+    "type": "software",
+    "title": "PixHomology",
+    "summary": "PixHomology is an open-source software for image processing and analysis focused on persistent homology computation. It provides a set of tools and algorithms to explore the topological features of 2D images, enabling users to extract meaningful information about the underlying structures.",
+    "img": "images/tools/pixhomology.png",
+    "link": "https://riccardoc95.github.io/PixHomology/",
+    "github": "https://github.com/riccardoc95/PixHomology",
+    "featured": true
   },
   {
     "type": "Website",
@@ -24,7 +24,7 @@
     "img": "images/projects/blank.png",
     "link": "/",
     "github": "/",
-    "featured": true
+    "featured": false
   },
   {
     "type": "Website Template",

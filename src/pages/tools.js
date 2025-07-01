@@ -34,10 +34,11 @@ const FeaturedTool = ({ type, title, summary, img, link, github }) => {
         </Link>
 
         <div className="flex w-1/2 flex-col items-start justify-between pl-6 lg:w-full lg:pl-0 lg:pt-6">
-          <span className="text-xl font-medium text-primary dark:text-primaryDark xs:text-base">{type}</span>
+
           <Link href={link} target="_blank" className="underline-offset-2 hover:underline">
             <h2 className="my-2 w-full text-left text-4xl font-bold lg:text-3xl xs:text-2xl">{title}</h2>
           </Link>
+            <span className="text-xl font-medium text-primary dark:text-primaryDark xs:text-base">{type}</span>
           <p className="my-2 rounded-md font-medium text-dark dark:text-light sm:text-sm">{summary}</p>
           <div className="mt-2 flex items-center">
             <Link href={github} target="_blank" className="w-10" aria-label={`${title} github link`}>
@@ -73,10 +74,10 @@ const Tool = ({ title, type, img, link, github }) => {
         </Link>
 
         <div className="mt-4 flex w-full flex-col items-start justify-between">
-          <span className="text-xl font-medium text-primary dark:text-primaryDark lg:text-lg md:text-base">{type}</span>
           <Link href={link} target="_blank" className="underline-offset-2 hover:underline">
             <h2 className="my-2 w-full text-left text-3xl font-bold lg:text-2xl">{title}</h2>
           </Link>
+          <span className="text-xl font-medium text-primary dark:text-primaryDark lg:text-lg md:text-base">{type}</span>
           <div className="flex w-full items-center justify-between">
             <Link href={link} target="_blank" className="rounded text-lg font-medium underline md:text-base">
               Visit
