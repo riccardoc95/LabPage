@@ -93,6 +93,60 @@ export const DribbbleIcon = ({ className, ...rest }) => (
   </svg>
 );
 
+
+export const EmailIcon = (props) => (
+    <svg width="1em"
+         height="1em"
+         viewBox="0 0 48 48"
+         xmlns="http://www.w3.org/2000/svg">
+      <path fill="none" stroke="#D93025" stroke-width="4" stroke-linejoin="round"
+            d="M6 12v24h36V12L24 27 6 12z"/>
+    </svg>
+
+);
+
+export const GoogleScholarIcon = (props) => (
+    <svg
+        {...props}
+        viewBox="0 0 48 48"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        className="w-5 h-5"
+        width="1em"
+        height="1em"
+    >
+      <path
+          d="M24 6L6 18l18 12 18-12L24 6zm0 5.1L37.2 18 24 26.9 10.8 18 24 11.1zM6 30v6h36v-6H6zm3 3h30v-1.5H9V33z"
+          fill="currentColor"
+      />
+    </svg>
+);
+
+export const ScopusIcon = (props) => (
+    <svg
+        {...props}
+        viewBox="0 0 32 42"
+        fill="currentColor"
+        xmlns="http://www.w3.org/2000/svg"
+        className="w-5 h-5"
+        width="1em"
+        height="1em"
+    >
+      <circle cx="16" cy="16" r="16" />
+      <text
+          x="16"
+          y="21"
+          textAnchor="middle"
+          fontSize="16"
+          fill="#fff"
+          fontFamily="Arial, sans-serif"
+          fontWeight="bold"
+      >
+        S
+      </text>
+    </svg>
+);
+
 export const SunIcon = ({ className, ...rest }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -426,54 +480,6 @@ export const MoonIcon = ({ className, ...rest }) => (
     </circle>
   </svg>
 );
-
-
-export const EmailIcon = (props) => (
-    <svg width="24" height="24" viewBox="0 0 32 64" xmlns="http://www.w3.org/2000/svg">
-      <path fill="none" stroke="#D93025" stroke-width="4" stroke-linejoin="round"
-            d="M6 12v24h36V12L24 27 6 12z"/>
-    </svg>
-
-);
-
-export const GoogleScholarIcon = (props) => (
-    <svg
-        {...props}
-        viewBox="0 0 48 48"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        className="w-5 h-5"
-    >
-      <path
-          d="M24 6L6 18l18 12 18-12L24 6zm0 5.1L37.2 18 24 26.9 10.8 18 24 11.1zM6 30v6h36v-6H6zm3 3h30v-1.5H9V33z"
-          fill="currentColor"
-      />
-    </svg>
-);
-
-export const ScopusIcon = (props) => (
-    <svg
-        {...props}
-        viewBox="0 0 32 42"
-        fill="currentColor"
-        xmlns="http://www.w3.org/2000/svg"
-        className="w-5 h-5"
-    >
-      <circle cx="16" cy="16" r="16" />
-      <text
-          x="16"
-          y="21"
-          textAnchor="middle"
-          fontSize="16"
-          fill="#fff"
-          fontFamily="Arial, sans-serif"
-          fontWeight="bold"
-      >
-        S
-      </text>
-    </svg>
-);
-
 
 export const CircularText = ({ className, ...rest }) => (
   <svg
