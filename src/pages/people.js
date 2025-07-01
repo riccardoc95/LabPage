@@ -57,7 +57,7 @@ const PersonCard = ({
             {role}
           </span>
                 </div>
-                    <div className="flex gap-3 justify-center mt-1">
+                    <div className="flex gap-1.5 justify-center mt-1">
                         {email && (
                             <a
                                 href={`mailto:${email}`}
