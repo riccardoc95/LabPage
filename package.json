@@ -4,11 +4,14 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "convert-bib": "node scripts/convert-bib.js",
+    "build": "npm run convert-bib && next build",
+    "export": "next export"
   },
   "dependencies": {
+    "@orcid/bibtex-parse-js": "^0.0.25",
     "eslint": "^8.35.0",
     "eslint-config-next": "^13.2.1",
     "framer-motion": "^10.0.1",

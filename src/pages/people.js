@@ -2,19 +2,15 @@ import AnimatedText from "@/components/AnimatedText";
 import Layout from "@/components/Layout";
 import { motion } from "framer-motion";
 import Head from "next/head";
-import Image from "next/image";
 import Link from "next/link";
-
 import TransitionEffect from "@/components/TransitionEffect";
-
-const FramerImage = motion.img;
-
 import {
     EmailIcon,
     GithubIcon,
     LinkedInIcon,
     GoogleScholarIcon,
     ScopusIcon,
+    TwitterIcon,
 } from "@/components/Icons";
 
 import data from "@/data/people.json";
@@ -27,6 +23,8 @@ export async function getStaticProps() {
     };
 }
 
+const FramerImage = motion.img;
+
 const PersonCard = ({
                         name,
                         role,
@@ -36,6 +34,7 @@ const PersonCard = ({
                         scopus,
                         gscholar,
                         github,
+                        twitter
                     }) => (
     <div className="col-span-4 md:col-span-6 sm:col-span-6">
         <article className="relative flex w-full flex-col rounded-2xl border border-solid border-dark bg-light shadow-2xl dark:border-light dark:bg-dark
@@ -58,9 +57,6 @@ const PersonCard = ({
             {role}
           </span>
                 </div>
-
-
-
                     <div className="flex gap-3 justify-center mt-1">
                         {email && (
                             <a
@@ -72,19 +68,19 @@ const PersonCard = ({
                                 <EmailIcon className="w-5 h-5 hover:text-red-600 dark:hover:text-red-400" />
                             </a>
                         )}
-                        {linkedin && (
+                        {twitter && (
                             <a
-                                href={linkedin}
+                                href={`https://github.com/${twitter}`}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                title="LinkedIn"
+                                title="Twitter"
                             >
-                                <LinkedInIcon className="w-5 h-5 hover:text-blue-600 dark:hover:text-blue-400" />
+                                <TwitterIcon className="w-5 h-5 hover:text-gray-800 dark:hover:text-gray-100" />
                             </a>
                         )}
                         {github && (
                             <a
-                                href={github}
+                                href={`https://github.com/${github}`}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 title="GitHub"
@@ -92,9 +88,19 @@ const PersonCard = ({
                                 <GithubIcon className="w-5 h-5 hover:text-gray-800 dark:hover:text-gray-100" />
                             </a>
                         )}
+                        {linkedin && (
+                            <a
+                                href={`https://linkedin.com/in/${linkedin}`}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                title="LinkedIn"
+                            >
+                                <LinkedInIcon className="w-5 h-5 hover:text-blue-600 dark:hover:text-blue-400" />
+                            </a>
+                        )}
                         {scopus && (
                             <a
-                                href={scopus}
+                                href={`https://www.scopus.com/authid/detail.uri?authorId=${scopus}`}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 title="Scopus"
@@ -146,6 +152,7 @@ export default function People({ data }) {
                                 role={person.role}
                                 img={person.img}
                                 email={person.email}
+                                twitter={person.twitter}
                                 linkedin={person.linkedin}
                                 scopus={person.scopus}
                                 gscholar={person.gscholar}
@@ -164,6 +171,7 @@ export default function People({ data }) {
                             role={person.role}
                             img={person.img}
                             email={person.email}
+                            twitter={person.twitter}
                             linkedin={person.linkedin}
                             scopus={person.scopus}
                             gscholar={person.gscholar}

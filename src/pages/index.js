@@ -1,4 +1,3 @@
-import AnimatedText from "@/components/AnimatedText";
 import Layout from "@/components/Layout";
 import Head from "next/head";
 import Logo from "@/components/Logo";

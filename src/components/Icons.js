@@ -429,25 +429,11 @@ export const MoonIcon = ({ className, ...rest }) => (
 
 
 export const EmailIcon = (props) => (
-    <svg
-        {...props}
-        fill="none"
-        stroke="currentColor"
-        strokeWidth={2}
-        viewBox="0 0 24 24"
-        className="w-5 h-5"
-    >
-      <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M16.5 4h-9A2.5 2.5 0 005 6.5v11A2.5 2.5 0 007.5 20h9a2.5 2.5 0 002.5-2.5v-11A2.5 2.5 0 0016.5 4z"
-      />
-      <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M5 7l7 5 7-5"
-      />
+    <svg width="24" height="24" viewBox="0 0 32 64" xmlns="http://www.w3.org/2000/svg">
+      <path fill="none" stroke="#D93025" stroke-width="4" stroke-linejoin="round"
+            d="M6 12v24h36V12L24 27 6 12z"/>
     </svg>
+
 );
 
 export const GoogleScholarIcon = (props) => (
@@ -468,7 +454,7 @@ export const GoogleScholarIcon = (props) => (
 export const ScopusIcon = (props) => (
     <svg
         {...props}
-        viewBox="0 0 32 32"
+        viewBox="0 0 32 42"
         fill="currentColor"
         xmlns="http://www.w3.org/2000/svg"
         className="w-5 h-5"

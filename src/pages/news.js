@@ -1,11 +1,11 @@
 import AnimatedText from "@/components/AnimatedText";
 import { motion, AnimatePresence } from "framer-motion";
 import Head from "next/head";
-import Image from "next/image";
 import Layout from "@/components/Layout";
 import Link from "next/link";
 import { useState } from "react";
 import TransitionEffect from "@/components/TransitionEffect";
+
 import data from "@/data/news.json";
 
 export async function getStaticProps() {
@@ -15,7 +15,8 @@ export async function getStaticProps() {
         },
     };
 }
-const FramerImage = motion(Image);
+
+const FramerImage = motion.img;
 
 const Post = ({ img, title, date, link, description }) => {
     const [isOpen, setIsOpen] = useState(false);

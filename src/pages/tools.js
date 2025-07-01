@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import Head from "next/head";
 import Link from "next/link";
 import TransitionEffect from "@/components/TransitionEffect";
+
 import data from "@/data/tools.json";
 
 export async function getStaticProps() {
@@ -15,7 +16,6 @@ export async function getStaticProps() {
     };
 }
 
-// Usa <motion.img> per supportare immagini dinamiche
 const FramerImage = motion.img;
 
 const FeaturedTool = ({ type, title, summary, img, link, github }) => {

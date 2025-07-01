@@ -1,129 +1,141 @@
 import AnimatedText from "@/components/AnimatedText";
-import { motion, useMotionValue } from "framer-motion";
+import { motion, useMotionValue, AnimatePresence } from "framer-motion";
 import Head from "next/head";
-import Image from "next/image";
 import Layout from "@/components/Layout";
 import Link from "next/link";
-import { useRef } from "react";
+import { useRef, useState } from "react";
+
 import TransitionEffect from "@/components/TransitionEffect";
-import data from "@/data/research.json";
 
-export async function getStaticProps() {
-    const featured = data
-        .filter((item) => item.type === "featured")
-        .map((item) => ({
-            title: item.title,
-            time: item.time,
-            summary: item.summary,
-            link: item.link,
-            img: item.img || "images/research/blank.png",
-        }));
+import bibEntries from "@/data/publications.json";
 
-    const articles = data
-        .filter((item) => item.type === "article")
-        .map((item) => ({
-            title: item.title,
-            date: item.date,
-            link: item.link,
-            img: item.img || "images/research/blank.png",
-        }));
 
-    return {
-        props: {
-            featured,
-            articles,
-        },
-    };
-}
-const FramerImage = motion.img;
+const formatAuthors = (authorString, maxAuthors = Infinity) => {
+    if (!authorString) return "";
 
-const MovingImg = ({ title, img, link }) => {
-    const x = useMotionValue(0);
-    const y = useMotionValue(0);
-    const imgRef = useRef(null);
+    const authors = authorString.split(/ and /g).map(a => a.trim());
 
-    const handleMouse = (event) => {
-        imgRef.current.style.display = "inline-block";
-        x.set(event.pageX);
-        y.set(-10);
-    };
+    if (authors.length <= maxAuthors) {
+        return authors.join(", ");
+    }
 
-    const handleMouseLeave = () => {
-        imgRef.current.style.display = "none";
-        x.set(0);
-        y.set(0);
+    return `${authors.slice(0, maxAuthors).join(", ")}, et al.`;
+};
+
+const truncate = (text, length = 200) =>
+    text.length > length ? text.slice(0, length) + "..." : text;
+
+const BibEntry = ({ type, entry }) => {
+    const {
+        title,
+        author,
+        year,
+        journal,
+        publisher,
+        booktitle,
+        address,
+        pages,
+        volume,
+        number,
+        editor,
+        organization,
+        school,
+        institution,
+        note,
+        howpublished,
+        series,
+        link,
+        doi,
+        abstract = "",
+    } = entry;
+
+    const [expanded, setExpanded] = useState(false);
+
+    const renderDetails = () => {
+        switch (type.toLowerCase()) {
+            case "article":
+                return `${journal}, Vol. ${volume || ""}${number ? `(${number})` : ""}, pp. ${pages || ""}`;
+            case "book":
+                return `${publisher}, ${address}`;
+            case "booklet":
+                return `${howpublished}, ${address || ""}`;
+            case "inbook":
+            case "incollection":
+                return `${booktitle}, ${pages ? `pp. ${pages}` : ""}, ${publisher}`;
+            case "inproceedings":
+                return `${booktitle}, ${publisher}, ${address}, pp. ${pages}`;
+            case "manual":
+                return `${organization}, ${address}`;
+            case "mastersthesis":
+            case "phdthesis":
+                return `${school}, ${address}`;
+            case "techreport":
+                return `${institution}, ${address}, ${entry.number || ""}`;
+            case "misc":
+                return `${howpublished || ""} ${note || ""}`;
+            case "unpublished":
+                return `${note || "Unpublished manuscript"}`;
+            case "proceedings":
+                return `${series}, Vol. ${volume}, ${publisher}, ${address}`;
+            default:
+                return "";
+        }
     };
 
     return (
-        <Link
-            href={link}
-            target="_blank"
-            className="relative"
-            onMouseMove={handleMouse}
-            onMouseLeave={handleMouseLeave}
+        <motion.li
+            initial={{ y: 200 }}
+            whileInView={{ y: 0, transition: { duration: 0.5, ease: "easeInOut" } }}
+            viewport={{ once: true }}
+            className="relative w-full p-4 py-6 my-2 rounded-xl flex justify-between items-start gap-4 bg-light text-dark border border-solid border-dark border-r-4 border-b-4 dark:bg-dark dark:border-light"
+            onClick={() => setExpanded(!expanded)}
         >
-            <h2 className="capitalize text-xl font-semibold hover:underline dark:text-light md:text-lg xs:text-base">
-                {title}
-            </h2>
-            <FramerImage
-                src={img}
-                ref={imgRef}
-                alt={title}
-                className="w-96 h-auto z-10 hidden absolute rounded-lg md:!hidden"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1, transition: { duration: 0.2 } }}
-                style={{ x, y }}
-                sizes="(max-width: 768px) 60vw, (max-width: 1200px) 40vw, 33vw"
-            />
-        </Link>
+            {/* Left: Main Content */}
+            <div className="flex-1 flex flex-col">
+                <h3 className="font-bold text-lg dark:text-light">{title}</h3>
+                {author && (
+                    <p className="text-sm text-gray-600 dark:text-gray-400">
+                        {formatAuthors(author, expanded ? Infinity : 3)}
+                    </p>
+                )}
+                <p className="text-sm text-muted dark:text-gray-400">{renderDetails()}</p>
+                {abstract && (
+                    <AnimatePresence initial={false}>
+                        <motion.p
+                            key={expanded ? "full" : "short"}
+                            initial={{ opacity: 0, height: 0 }}
+                            animate={{ opacity: 1, height: "auto" }}
+                            exit={{ opacity: 0, height: 0 }}
+                            transition={{ duration: 0.3 }}
+                            className="text-sm text-gray-800 dark:text-gray-300 mt-2 text-justify"
+                        >
+                            {expanded ? abstract : truncate(abstract, 200)}
+                        </motion.p>
+                    </AnimatePresence>
+                )}
+                {(link || doi) && (
+                    <Link
+                        href={link || `https://doi.org/${doi}`}
+                        className="text-blue-500 hover:underline text-sm mt-1"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Access
+                    </Link>
+                )}
+            </div>
+
+            {/* Right: Year */}
+            <div className="min-w-[3rem] pl-4 pt-1 text-right sm:pt-0">
+        <span className="text-primary font-semibold dark:text-primaryDark text-sm">
+          {year}
+        </span>
+            </div>
+        </motion.li>
     );
 };
 
-const Article = ({ img, title, date, link }) => (
-    <motion.li
-        initial={{ y: 200 }}
-        whileInView={{ y: 0, transition: { duration: 0.5, ease: "easeInOut" } }}
-        viewport={{ once: true }}
-        className="relative w-full p-4 py-6 my-2 rounded-xl flex sm:flex-col items-center justify-between
-      bg-light text-dark border border-solid border-dark border-r-4 border-b-4 dark:bg-dark dark:border-light"
-    >
-        <MovingImg img={img} title={title} link={link} />
-        <span className="text-primary font-semibold dark:text-primaryDark min-w-max pl-4 sm:self-start sm:pl-0 xs:text-sm">
-      {date}
-    </span>
-    </motion.li>
-);
-
-const FeaturedArticle = ({ img, title, time, summary, link }) => (
-    <li className="relative w-full p-4 col-span-1 bg-light border border-dark border-solid rounded-2xl dark:bg-dark dark:border-light">
-        <div className="absolute top-0 -right-3 w-[102%] h-[103%] rounded-[2rem] rounded-br-3xl bg-dark -z-10" />
-        <Link
-            href={link}
-            target="_blank"
-            className="inline-block rounded-lg overflow-hidden w-full"
-        >
-            <FramerImage
-                src={img}
-                alt={title}
-                className="w-full h-auto"
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.2 }}
-                sizes="100vw"
-                priority
-            />
-        </Link>
-
-        <Link href={link} target="_blank">
-            <h2 className="capitalize text-2xl font-bold my-2 mt-4 hover:underline xs:text-lg">
-                {title}
-            </h2>
-        </Link>
-        <p className="text-sm mb-2">{summary}</p>
-        <span className="text-primary font-semibold dark:text-primaryDark">{time}</span>
-    </li>
-);
-
-export default function Publications({ featured, articles }) {
+export default function Publications() {
     return (
         <>
             <Head>
@@ -143,19 +155,14 @@ export default function Publications({ featured, articles }) {
                         className="!text-8xl !leading-tight mb-16 lg:!text-7xl sm:!text-6xl xs:!text-4xl sm:mb-8"
                     />
 
-                    <ul className="grid grid-cols-2 gap-16 lg:gap-8 md:grid-cols-1 md:gap-y-16">
-                        {featured.map((article, idx) => (
-                            <FeaturedArticle key={idx} {...article} />
-                        ))}
-                    </ul>
-
                     <h2 className="font-bold text-4xl w-full text-center mt-32 my-16">All Articles</h2>
 
                     <ul className="flex flex-col items-center relative">
-                        {articles.map((article, idx) => (
-                            <Article key={idx} {...article} />
+                        {bibEntries.map((entryObj, idx) => (
+                            <BibEntry key={`bib-${idx}`} type={entryObj.type} entry={entryObj.entry} />
                         ))}
                     </ul>
+
                 </Layout>
             </main>
         </>
@@ -163,34 +170,3 @@ export default function Publications({ featured, articles }) {
 }
 
 
-{/*
-export async function getStaticProps() {
-    const data = readCsv("research.csv");
-
-    const featured = data
-        .filter((item) => item.type === "featured")
-        .map((item) => ({
-            title: item.title,
-            time: item.time,
-            summary: item.summary,
-            link: item.link,
-            img: item.img || "images/research/blank.png",
-        }));
-
-    const articles = data
-        .filter((item) => item.type === "article")
-        .map((item) => ({
-            title: item.title,
-            date: item.date,
-            link: item.link,
-            img: item.img || "images/research/blank.png",
-        }));
-
-    return {
-        props: {
-            featured,
-            articles,
-        },
-    };
-}
-*/}

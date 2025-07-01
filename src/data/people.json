@@ -5,10 +5,11 @@
     "role": "Full Professor",
     "img": "images/people/blank.png",
     "email": "person1@example.com",
-    "linkedin": "https://linkedin.com/in/person1",
-    "scopus": "https://www.scopus.com/authid/detail.uri?authorId=12345678900",
+    "linkedin": "person1",
+    "scopus": "12345678900",
     "gscholar": "xNQoOAwAAAAJ",
-    "github": "https://github.com/person1"
+    "github": "person1",
+    "twitter": "twitter"
   },
   {
     "level": 1,
@@ -16,10 +17,11 @@
     "role": "Post Doc Researcher",
     "img": "images/people/blank.png",
     "email": "person1@example.com",
-    "linkedin": "https://linkedin.com/in/person1",
-    "scopus": "https://www.scopus.com/authid/detail.uri?authorId=12345678900",
+    "linkedin": "person1",
+    "scopus": "12345678900",
     "gscholar": "xNQoOAwAAAAJ",
-    "github": "https://github.com/person1"
+    "github": "person1",
+    "twitter": "twitter"
   },
   {
     "level": 1,
@@ -27,10 +29,11 @@
     "role": "Associate Professor",
     "img": "images/people/blank.png",
     "email": "person1@example.com",
-    "linkedin": "https://linkedin.com/in/person1",
-    "scopus": "https://www.scopus.com/authid/detail.uri?authorId=12345678900",
+    "linkedin": "person1",
+    "scopus": "12345678900",
     "gscholar": "xNQoOAwAAAAJ",
-    "github": "https://github.com/person1"
+    "github": "person1",
+    "twitter": "twitter"
   },
   {
     "level": 1,
@@ -38,10 +41,11 @@
     "role": "PhD Student",
     "img": "images/people/blank.png",
     "email": "person1@example.com",
-    "linkedin": "https://linkedin.com/in/person1",
-    "scopus": "https://www.scopus.com/authid/detail.uri?authorId=12345678900",
+    "linkedin": "person1",
+    "scopus": "12345678900",
     "gscholar": "xNQoOAwAAAAJ",
-    "github": "https://github.com/person1"
+    "github": "person1",
+    "twitter": "twitter"
   },
   {
     "level": 2,
@@ -49,9 +53,10 @@
     "role": "Student",
     "img": "images/people/blank.png",
     "email": "person1@example.com",
-    "linkedin": "https://linkedin.com/in/person1",
-    "scopus": "https://www.scopus.com/authid/detail.uri?authorId=12345678900",
+    "linkedin": "person1",
+    "scopus": "12345678900",
     "gscholar": "",
-    "github": ""
+    "github": "",
+    "twitter": "twitter"
   }
 ]

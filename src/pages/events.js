@@ -1,7 +1,6 @@
 import AnimatedText from "@/components/AnimatedText";
-import { motion, useMotionValue, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import Head from "next/head";
-import Image from "next/image";
 import Layout from "@/components/Layout";
 import Link from "next/link";
 import { useState } from "react";
@@ -17,8 +16,7 @@ export async function getStaticProps() {
     };
 }
 
-
-const FramerImage = motion(Image);
+const FramerImage = motion.img;
 
 const Event = ({ img, title, date, link, description }) => {
     const [isOpen, setIsOpen] = useState(false);
