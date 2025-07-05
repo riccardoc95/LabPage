@@ -6,6 +6,7 @@
     "dev": "next dev",
     "start": "next start",
     "lint": "next lint",
+    "scholarly": "pip install scholarly",
     "convert-bib": "node scripts/convert-bib.js",
     "build": "npm run convert-bib && next build",
     "export": "next export"

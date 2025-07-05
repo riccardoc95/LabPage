@@ -96,6 +96,7 @@ lg:px-16 md:px-12 sm:px-8
         <CustomLink className="mx-4" href="/tools" title="Tools" />
         <CustomLink className="mx-4" href="/events" title="Events" />
         <CustomLink className="mx-4" href="/news" title="News" />
+        <CustomLink className="mx-4" href="/terastat" title="TeraStat" />
       </nav>
       <nav
         className="flex items-center justify-center flex-wrap lg:mt-2
@@ -186,6 +187,7 @@ lg:px-16 md:px-12 sm:px-8
         <CustomMobileLink toggle={handleClick} className="ml-4 lg:m-0 lg:my-2" href="/tools" title="Tools" />
         <CustomMobileLink toggle={handleClick} className="ml-4 lg:m-0 lg:my-2" href="/events" title="Events" />
         <CustomMobileLink toggle={handleClick} className="ml-4 lg:m-0 lg:my-2" href="/news" title="News" />
+        <CustomMobileLink toggle={handleClick} className="ml-4 lg:m-0 lg:my-2" href="/terastat" title="TeraStat" />
       </nav>
       <nav
         className="flex items-center justify-center  mt-2
