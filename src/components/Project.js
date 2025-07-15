@@ -14,7 +14,7 @@ const ProjectCard = ({ title, summary, keywords, img, link, github }) => {
             className="flex w-full max-w-4xl mx-auto items-center justify-center gap-6 py-6 border-b border-gray-300 dark:border-gray-700"
         >
             {/* Left: Image */}
-            <div className="flex-shrink-0 w-52 h-12 rounded-full overflow-hidden">
+            <div className="flex-shrink-0 w-52 h-12 rounded-full overflow-hidden md:hidden">
                 <Link href={link} target="_blank" rel="noopener noreferrer">
                     <FramerImage
                         src={img}
@@ -30,6 +30,16 @@ const ProjectCard = ({ title, summary, keywords, img, link, github }) => {
             <div className="flex flex-col justify-center text-left w-full">
                 <Link href={link} target="_blank" className="hover:underline underline-offset-4">
                     <h2 className="text-xl font-bold text-dark dark:text-light">{title}</h2>
+                </Link>
+
+                <Link href={link} target="_blank" rel="noopener noreferrer">
+                    <FramerImage
+                        src={img}
+                        alt={title}
+                        className="w-full h-full object-cover hidden md:flex"
+                        whileHover={{ scale: 1.05 }}
+                        transition={{ duration: 0.2 }}
+                    />
                 </Link>
 
                 <span className="text-sm text-primary dark:text-primaryDark mb-1">{keywords}</span>

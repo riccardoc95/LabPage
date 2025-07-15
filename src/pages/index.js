@@ -47,15 +47,18 @@ export default function Home() {
                         </p>
 
                         <p>
-                            For further details about the TS2 infrastructure, including technical specifications and access guidelines, please visit:{" "}
+                            For further details about the TS2 infrastructure, including technical specifications and access guidelines, please visit{" "}
                             <a
                                 href="https://www.dss.uniroma1.it/it/HPCTerastat2"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="text-blue-600 dark:text-blue-400 underline hover:text-blue-800"
+                                className="font-semibold text-primary dark:text-primaryDark hover:underline"
                             >
-                                https://www.dss.uniroma1.it/it/HPCTerastat2
+                                HPCTerastat2
                             </a>
+                            .
+
+
                         </p>
                     </section>
                 </Layout>

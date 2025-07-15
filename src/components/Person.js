@@ -28,13 +28,13 @@ const PersonCard = ({
                 transition={{ duration: 0.2 }}
             />
         </Link>
-
+        <h2 className="text-lg sm:text-xl md:text-2xl font-bold">{name}</h2>
         {/* This wrapper will push name/role + social to bottom */}
         <div className="flex flex-col flex-grow justify-end w-full">
 
             {/* Name and Role */}
             <div>
-                <h2 className="text-lg sm:text-xl md:text-2xl font-bold">{name}</h2>
+
                 <span className="block text-sm sm:text-base md:text-lg font-medium text-secondary dark:text-secondaryDark">
         {label || "\u00A0"}
       </span>
