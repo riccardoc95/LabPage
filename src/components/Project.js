@@ -15,6 +15,7 @@ const ProjectCard = ({ title, summary, keywords, img, link, github }) => {
         >
             {/* Left: Image */}
             <div className="flex-shrink-0 w-52 h-12 rounded-full overflow-hidden md:hidden">
+                {img && (
                 <Link href={link} target="_blank" rel="noopener noreferrer">
                     <FramerImage
                         src={img}
@@ -24,6 +25,7 @@ const ProjectCard = ({ title, summary, keywords, img, link, github }) => {
                         transition={{ duration: 0.2 }}
                     />
                 </Link>
+                )}
             </div>
 
             {/* Right: Content */}
@@ -31,7 +33,7 @@ const ProjectCard = ({ title, summary, keywords, img, link, github }) => {
                 <Link href={link} target="_blank" className="hover:underline underline-offset-4">
                     <h2 className="text-xl font-bold text-dark dark:text-light">{title}</h2>
                 </Link>
-
+                {img && (
                 <Link href={link} target="_blank" rel="noopener noreferrer">
                     <FramerImage
                         src={img}
@@ -41,6 +43,7 @@ const ProjectCard = ({ title, summary, keywords, img, link, github }) => {
                         transition={{ duration: 0.2 }}
                     />
                 </Link>
+                )}
 
                 <span className="text-sm text-primary dark:text-primaryDark mb-1">{keywords}</span>
 

@@ -12,7 +12,7 @@
     "type": "Website",
     "title": "Fashion Studio Website",
     "summary": "",
-    "img": "images/projects/blank.png",
+    "img": "",
     "link": "/",
     "github": "/",
     "featured": false
@@ -21,7 +21,7 @@
     "type": "Portfolio Website",
     "title": "React Portfolio Website",
     "summary": "Professional portfolio using React JS, Framer-motion",
-    "img": "images/projects/blank.png",
+    "img": "",
     "link": "/",
     "github": "/",
     "featured": true
@@ -30,7 +30,7 @@
     "type": "Website Template",
     "title": "Agency Website Template",
     "summary": "",
-    "img": "images/projects/blank.png",
+    "img": "",
     "link": "/",
     "github": "/",
     "featured": false
@@ -39,7 +39,7 @@
     "type": "Blog Website",
     "title": "DevDreaming",
     "summary": "",
-    "img": "images/projects/blank.png",
+    "img": "",
     "link": "/",
     "github": "/",
     "featured": false

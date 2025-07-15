@@ -11,7 +11,7 @@
     "keywords": "Website",
     "title": "Fashion Studio Website",
     "summary": "",
-    "img": "images/projects/blank.png",
+    "img": "",
     "link": "",
     "github": ""
   },
@@ -19,7 +19,7 @@
     "keywords": "Portfolio Website",
     "title": "React Portfolio Website",
     "summary": "Professional portfolio using React JS, Framer-motion",
-    "img": "images/projects/blank.png",
+    "img": "",
     "link": "/",
     "github": "/"
   },
@@ -27,16 +27,16 @@
     "keywords": "Website Template",
     "title": "Agency Website Template",
     "summary": "",
-    "img": "images/projects/blank.png",
+    "img": "",
     "link": "/",
-    "github": "/"
+    "github": ""
   },
   {
     "keywords": "Blog Website",
     "title": "DevDreaming",
     "summary": "",
-    "img": "images/projects/blank.png",
-    "link": "/",
+    "img": "",
+    "link": "",
     "github": "/"
   }
 ]
