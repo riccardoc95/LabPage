@@ -8,7 +8,6 @@ const ProjectCard = ({ title, summary, keywords, img, link, github }) => {
     return (
         <motion.li
             layout
-            onClick={() => setIsOpen((prev) => !prev)}
             initial={{ y: 200 }}
             animate={{ y: 0 }}
             transition={{ duration: 0.5, ease: "easeInOut" }}
