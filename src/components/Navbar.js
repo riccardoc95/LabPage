@@ -2,13 +2,11 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { useRouter } from "next/router";
 import {
-  DribbbleIcon,
-  GithubIcon,
-  LinkedInIcon,
-  MoonIcon,
-  PinterestIcon,
-  SunIcon,
-  TwitterIcon,
+    TeraLabIcon,
+    TwitterIcon,
+    LinkedInIcon,
+    MoonIcon,
+    SunIcon,
 } from "./Icons";
 import { motion } from "framer-motion";
 import { useThemeSwitch } from "./Hooks/useThemeSwitch";
@@ -17,13 +15,13 @@ const CustomLink = ({ href, title, className = "" }) => {
   const router = useRouter();
 
   return (
-    <Link href={href} className={`${className}  rounded relative group lg:text-light lg:dark:text-dark`}>
+    <Link href={href} className={`${className}  rounded relative group xl:text-light xl:dark:text-dark`}>
       {title}
       <span
         className={`
               inline-block h-[1px]  bg-dark absolute left-0 -bottom-0.5 
               group-hover:w-full transition-[width] ease duration-300 dark:bg-light
-              ${router.asPath === href ? "w-full" : " w-0"} lg:bg-light lg:dark:bg-dark
+              ${router.asPath === href ? "w-full" : " w-0"} xl:bg-light xl:dark:bg-dark
               `}
       >
         &nbsp;
@@ -37,17 +35,17 @@ const CustomMobileLink = ({ href, title, className = "", toggle }) => {
 
   const handleClick = () =>{
     toggle();
-    router.push(href) 
+    router.push(href)
   }
 
   return (
-    <button className={`${className}  rounded relative group lg:text-light lg:dark:text-dark`} onClick={handleClick}>
+    <button className={`${className}  rounded relative group xl:text-light xl:dark:text-dark`} onClick={handleClick}>
       {title}
       <span
         className={`
               inline-block h-[1px]  bg-dark absolute left-0 -bottom-0.5 
               group-hover:w-full transition-[width] ease duration-300 dark:bg-light
-              ${router.asPath === href ? "w-full" : " w-0"} lg:bg-light lg:dark:bg-dark
+              ${router.asPath === href ? "w-full" : " w-0"} xl:bg-light xl:dark:bg-dark
               `}
       >
         &nbsp;
@@ -70,11 +68,11 @@ const Navbar = () => {
 
   return (
     <header className="fixed top-0 left-0 w-full flex items-center justify-between px-32 py-8 font-medium z-50 bg-light/95 dark:bg-dark/95 dark:text-light
-lg:px-16 md:px-12 sm:px-8
+xl:px-16 md:px-12 sm:px-8
     ">
       <button
         type="button"
-        className=" flex-col items-center justify-center hidden lg:flex"
+        className=" flex-col items-center justify-center hidden xl:flex"
         aria-controls="mobile-menu"
         aria-expanded={isOpen}
         onClick={handleClick}
@@ -85,21 +83,25 @@ lg:px-16 md:px-12 sm:px-8
         <span className={`bg-dark dark:bg-light block h-0.5 w-6 rounded-sm transition-all duration-300 ease-out ${isOpen ? '-rotate-45 -translate-y-1' : 'translate-y-0.5'}`}></span>
       </button>
 
-      <div className="w-full flex justify-between items-center lg:hidden"
+      <div className="w-full flex justify-between items-center xl:hidden"
       >
-      <nav className="flex items-center justify-center">
+
+      <div className="flex-shrink-0">
+          <Link href="/" className="flex items-center">
+              <TeraLabIcon className="w-10 h-auto dark:invert"/>
+          </Link>
+      </div>
+      <nav className="flex items-center justify-center ">
         <CustomLink className="mx-4" href="/" title="Home" />
-        <CustomLink className="mx-4" href="/about" title="About" />
         <CustomLink className="mx-4" href="/people" title="People" />
         <CustomLink className="mx-4" href="/research" title="Research Area" />
         <CustomLink className="mx-4" href="/publications" title="Publications" />
-        <CustomLink className="mx-4" href="/tools" title="Tools" />
+        <CustomLink className="mx-4" href="/projects" title="Projects" />
         <CustomLink className="mx-4" href="/events" title="Events" />
         <CustomLink className="mx-4" href="/news" title="News" />
-        <CustomLink className="mx-4" href="/terastat" title="TeraStat" />
       </nav>
       <nav
-        className="flex items-center justify-center flex-wrap lg:mt-2
+        className="flex items-center justify-center flex-wrap xl:mt-2
       "
       >
         <motion.a
@@ -118,41 +120,10 @@ lg:px-16 md:px-12 sm:px-8
           href="#"
           whileHover={{ y: -2 }}
           whileTap={{ scale: 0.9 }}
-          aria-label="Checkout my github profile"
-        >
-          <GithubIcon />
-        </motion.a>
-        <motion.a
-          target={"_blank"}
-          className="w-6 mx-3"
-          href="#"
-          whileHover={{ y: -2 }}
-          whileTap={{ scale: 0.9 }}
           aria-label="Checkout my linkedin profile"
         >
           <LinkedInIcon />
         </motion.a>
-        <motion.a
-          target={"_blank"}
-          className="w-6 mx-3 bg-light rounded-full"
-          href="#"
-          whileHover={{ y: -2 }}
-          whileTap={{ scale: 0.9 }}
-          aria-label="Checkout my pinterest profile"
-        >
-          <PinterestIcon />
-        </motion.a>
-        <motion.a
-          target={"_blank"}
-          className="w-6 mx-3"
-          href="#"
-          whileHover={{ y: -2 }}
-          whileTap={{ scale: 0.9 }}
-          aria-label="Checkout my dribbble profile"
-        >
-          <DribbbleIcon />
-        </motion.a>
-
         <button
           onClick={() => setMode(mode === "light" ? "dark" : "light")}
           className={`w-6 h-6 ease ml-3 flex items-center justify-center rounded-full p-1  
@@ -169,7 +140,7 @@ lg:px-16 md:px-12 sm:px-8
       </nav>
       </div>
     {
-      isOpen ? 
+      isOpen ?
 
       <motion.div className="min-w-[70vw] sm:min-w-[90vw] flex justify-between items-center flex-col fixed top-1/2 left-1/2 -translate-x-1/2
       -translate-y-1/2
@@ -178,16 +149,19 @@ lg:px-16 md:px-12 sm:px-8
       initial={{scale:0,x:"-50%",y:"-50%", opacity:0}}
       animate={{scale:1,opacity:1}}
       >
+          <div className="flex-shrink-0">
+              <Link href="/" className="flex items-center">
+                  <TeraLabIcon className="w-10 h-auto dark:invert"/>
+              </Link>
+  </div>
       <nav className="flex items-center justify-center flex-col">
-        <CustomMobileLink toggle={handleClick} className="ml-4 lg:m-0 lg:my-2" href="/" title="Home" />
-        <CustomMobileLink toggle={handleClick} className="ml-4 lg:m-0 lg:my-2" href="/about" title="About" />
-        <CustomMobileLink toggle={handleClick} className="ml-4 lg:m-0 lg:my-2" href="/people" title="People" />
-        <CustomMobileLink toggle={handleClick} className="ml-4 lg:m-0 lg:my-2" href="/research" title="Research Area" />
-        <CustomMobileLink toggle={handleClick} className="ml-4 lg:m-0 lg:my-2" href="/publications" title="Publications" />
-        <CustomMobileLink toggle={handleClick} className="ml-4 lg:m-0 lg:my-2" href="/tools" title="Tools" />
-        <CustomMobileLink toggle={handleClick} className="ml-4 lg:m-0 lg:my-2" href="/events" title="Events" />
-        <CustomMobileLink toggle={handleClick} className="ml-4 lg:m-0 lg:my-2" href="/news" title="News" />
-        <CustomMobileLink toggle={handleClick} className="ml-4 lg:m-0 lg:my-2" href="/terastat" title="TeraStat" />
+        <CustomMobileLink toggle={handleClick} className="ml-4 xl:m-0 xl:my-2" href="/" title="Home" />
+        <CustomMobileLink toggle={handleClick} className="ml-4 xl:m-0 xl:my-2" href="/people" title="People" />
+        <CustomMobileLink toggle={handleClick} className="ml-4 xl:m-0 xl:my-2" href="/research" title="Research Area" />
+        <CustomMobileLink toggle={handleClick} className="ml-4 xl:m-0 xl:my-2" href="/publications" title="Publications" />
+        <CustomMobileLink toggle={handleClick} className="ml-4 xl:m-0 xl:my-2" href="/projects" title="Projects" />
+        <CustomMobileLink toggle={handleClick} className="ml-4 xl:m-0 xl:my-2" href="/events" title="Events" />
+        <CustomMobileLink toggle={handleClick} className="ml-4 xl:m-0 xl:my-2" href="/news" title="News" />
       </nav>
       <nav
         className="flex items-center justify-center  mt-2
@@ -205,16 +179,6 @@ lg:px-16 md:px-12 sm:px-8
         </motion.a>
         <motion.a
           target={"_blank"}
-          className="w-6 m-1 mx-3 bg-light rounded-full dark:bg-dark sm:mx-1"
-          href="#"
-          whileHover={{ y: -2 }}
-          whileTap={{ scale: 0.9 }}
-          aria-label="Checkout my github profile"
-        >
-          <GithubIcon />
-        </motion.a>
-        <motion.a
-          target={"_blank"}
           className="w-6 m-1 mx-3 sm:mx-1"
           href="#"
           whileHover={{ y: -2 }}
@@ -223,27 +187,6 @@ lg:px-16 md:px-12 sm:px-8
         >
           <LinkedInIcon />
         </motion.a>
-        <motion.a
-          target={"_blank"}
-          className="w-6 m-1 mx-3 bg-light rounded-full sm:mx-1"
-          href="#"
-          whileHover={{ y: -2 }}
-          whileTap={{ scale: 0.9 }}
-          aria-label="Checkout my pinterest profile"
-        >
-          <PinterestIcon />
-        </motion.a>
-        <motion.a
-          target={"_blank"}
-          className="w-6 m-1 mx-3 sm:mx-1"
-          href="#"
-          whileHover={{ y: -2 }}
-          whileTap={{ scale: 0.9 }}
-          aria-label="Checkout my dribbble profile"
-        >
-          <DribbbleIcon />
-        </motion.a>
-
         <button
           onClick={() => setMode(mode === "light" ? "dark" : "light")}
           className={`w-6 h-6 ease m-1 ml-3 sm:mx-1 flex items-center justify-center rounded-full p-1  

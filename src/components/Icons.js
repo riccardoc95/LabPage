@@ -1,5 +1,17 @@
 import * as React from "react";
 
+import Image from "next/image";
+import teralab from "../../public/images/svgs/logo1.svg";
+
+export const TeraLabIcon = ({ className = "", ...rest }) => (
+    <Image
+        src={teralab}
+        alt="TeraLab logo"
+        className={className}
+        {...rest}
+    />
+);
+
 export const GithubIcon = ({ className, ...rest }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"

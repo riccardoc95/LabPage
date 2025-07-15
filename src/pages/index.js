@@ -13,7 +13,7 @@ export default function Home() {
                 <title>TeraLab | Home</title>
                 <meta
                     name="description"
-                    content="TeraLab is a research-driven innovation lab focused on HPC, AI, and data science. Discover our people, projects, and latest initiatives."
+                    content="TeraLab"
                 />
             </Head>
 
@@ -23,10 +23,41 @@ export default function Home() {
                 <Layout className="pt-12 md:pt-16 sm:pt-10">
 
                     {/* Logo */}
-                    <Link href="/about" className="w-full flex justify-center mb-12">
+                    <Link href="/" className="w-full flex justify-center mb-12">
                         <Logo className="w-64 h-auto md:w-48 sm:w-40" />
                     </Link>
-                    <h1 className="text-6xl font-bold text-center mt-0">TeraLAB</h1>
+                    <h1 className="text-6xl font-bold text-center mb-8">Welcome to TeraLab </h1>
+                    <h1 className="text-4xl font-bold text-center mb-8">HPC for Statistics and AI</h1>
+
+                    <section className="space-y-6 text-lg text-justify leading-relaxed">
+                        <p>
+                            <strong>TeraLab</strong> is the High-Performance Computing laboratory of the Department of Statistical Sciences at Sapienza University, dedicated to advancing research in statistics and artificial intelligence through the use of HPC infrastructure.
+                        </p>
+
+                        <p>
+                            The lab supports the development and execution of computationally intensive models on <strong>TeraStat2 (TS2)</strong>, a general-purpose supercomputing system optimized for mathematical and statistical processing on Big Data. TS2 is freely available to Sapienza faculty, researchers, PhD students, and research fellows working on high-demand computational projects.
+                        </p>
+
+                        <p>
+                            TeraLab provides technical expertise, user support, and training for the design and optimization of efficient computational solutions, offering a robust foundation for scientific innovation.
+                        </p>
+
+                        <p>
+                            This site presents the main research areas and projects developed using the TS2 infrastructure, highlighting the scientific contributions enabled by high-performance computing. It also features the research group members, showcasing their roles and expertise within the lab.
+                        </p>
+
+                        <p>
+                            For further details about the TS2 infrastructure, including technical specifications and access guidelines, please visit:{" "}
+                            <a
+                                href="https://www.dss.uniroma1.it/it/HPCTerastat2"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-blue-600 dark:text-blue-400 underline hover:text-blue-800"
+                            >
+                                https://www.dss.uniroma1.it/it/HPCTerastat2
+                            </a>
+                        </p>
+                    </section>
                 </Layout>
             </article>
         </>
