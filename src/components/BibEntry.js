@@ -109,11 +109,11 @@ const BibEntryCard = ({ type, entry }) => {
                 {(link || doi) && (
                     <Link
                         href={link || `https://doi.org/${doi}`}
-                        className="text-secondary dark:text-secondaryDark hover:underline text-sm mt-1"
+                        className="text-primary dark:text-primaryDark hover:underline font-semibold text-sm mt-1"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        Read
+                        Read more →
                     </Link>
                 )}
             </div>
