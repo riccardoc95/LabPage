@@ -5,8 +5,13 @@ import TransitionEffect from "@/components/TransitionEffect";
 import BibEntryCard from "@/components/BibEntry";
 import bibEntries from "@/data/publications.json";
 
+import { useState } from "react";
+
+
 
 export default function Publications() {
+    const [searchText, setSearchText] = useState("");
+
     return (
         <>
             <Head>
@@ -31,11 +36,34 @@ export default function Publications() {
                         Publications
                     </h2>
 
-                    <ul className="flex flex-col items-center relative">
+                    <input
+                        type="text"
+                        placeholder="Filter by author, year, title..."
+                        value={searchText}
+                        onChange={(e) => setSearchText(e.target.value)}
+                        className="flex w-full max-w-4xl mx-auto items-center justify-center border-gray-300 rounded px-4 py-2 mb-8 w-full max-w-md"
+                    />
+
+                    {/*<ul className="flex flex-col items-center relative">
                         {bibEntries.map((entryObj, idx) => (
                             <BibEntryCard key={`bib-${idx}`} type={entryObj.type} entry={entryObj.entry} />
                         ))}
-                    </ul>
+                    </ul>*/}
+                    {bibEntries
+                        .filter(entryObj => {
+                            const entry = entryObj.entry;
+                            const text = searchText.toLowerCase();
+
+                            // Filtra se uno dei campi contiene il testo cercato
+                            return (
+                                entry.author?.toLowerCase().includes(text) ||
+                                entry.year?.toString().includes(text) ||
+                                entry.title?.toLowerCase().includes(text)
+                            );
+                        })
+                        .map((entryObj, idx) => (
+                            <BibEntryCard key={`bib-${idx}`} type={entryObj.type} entry={entryObj.entry} />
+                        ))}
 
                 </Layout>
             </main>
