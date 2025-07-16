@@ -80,7 +80,7 @@ const Navbar = () => {
 
 
   return (
-    <header className="fixed top-0 left-0 w-full flex items-center justify-between px-32 py-8 font-medium z-50 bg-light/95 dark:bg-dark/95 dark:text-light
+    <header className="fixed grid grid-cols-3 items-center px-32 py-8 font-medium z-50 bg-light/95 dark:bg-dark/95 dark:text-light
 xl:px-16 md:px-12 sm:px-8
     ">
       <button
@@ -96,25 +96,26 @@ xl:px-16 md:px-12 sm:px-8
         <span className={`bg-dark dark:bg-light block h-0.5 w-6 rounded-sm transition-all duration-300 ease-out ${isOpen ? '-rotate-45 -translate-y-1' : 'translate-y-0.5'}`}></span>
       </button>
 
-      <div className="w-full flex justify-between items-center xl:hidden"
-      >
+        {/* Left column */}
+        <div className="w-full flex justify-between items-center xl:hidden">
+            <Link href="/">
+                <TeraLabIcon className="h-15 w-20 " />
+            </Link>
+        </div>
 
-      <div className="flex-shrink-0">
-          <Link href="/" className="flex items-center">
-              <TeraLabIcon className="w-10 h-auto dark:invert"/>
-          </Link>
-      </div>
-      <nav className="flex items-center justify-center ">
+        {/* Center column */}
+      <nav className="flex items-center justify-center xl:hidden">
         <CustomLink className="mx-4" href="/" title="Home" />
         <CustomLink className="mx-4" href="/people" title="People" />
-        <CustomLink className="mx-4" href="/research" title="Research Area" />
+        <CustomLink className="mx-4 whitespace-nowrap" href="/research" title="Research Area" />
         <CustomLink className="mx-4" href="/publications" title="Publications" />
         <CustomLink className="mx-4" href="/projects" title="Projects" />
         <CustomLink className="mx-4" href="/events" title="Events" />
         <CustomLink className="mx-4" href="/news" title="News" />
       </nav>
+        {/* Right column */}
       <nav
-        className="flex items-center justify-center flex-wrap xl:mt-2
+        className="flex items-center justify-end flex-wrap xl:mt-2 xl:hidden
       "
       >
         <motion.a
@@ -151,7 +152,6 @@ xl:px-16 md:px-12 sm:px-8
           )}
         </button>
       </nav>
-      </div>
     {
       isOpen ?
 
@@ -164,7 +164,7 @@ xl:px-16 md:px-12 sm:px-8
       >
           <div className="flex-shrink-0">
               <Link href="/" className="flex items-center">
-                  <TeraLabIcon className="w-10 h-auto dark:invert"/>
+                  <TeraLabIcon className="w-24 h-auto dark:invert"/>
               </Link>
   </div>
       <nav className="flex items-center justify-center flex-col">

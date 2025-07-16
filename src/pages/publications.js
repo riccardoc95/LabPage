@@ -52,17 +52,41 @@ export default function Publications() {
                     {bibEntries
                         .filter(entryObj => {
                             const entry = entryObj.entry;
-                            const text = searchText.toLowerCase();
+                            const terms = searchText.toLowerCase().split(/\s+/).filter(Boolean);
 
-                            // Filtra se uno dei campi contiene il testo cercato
-                            return (
-                                entry.author?.toLowerCase().includes(text) ||
-                                entry.year?.toString().includes(text) ||
-                                entry.title?.toLowerCase().includes(text)
-                            );
+                            // Combine searchable fields
+                            const combinedText = [
+                                entry.author,
+                                entry.title,
+                                entry.year?.toString(),
+                                entry.journal,
+                                entry.publisher,
+                                entry.booktitle,
+                                entry.address,
+                                entry.pages,
+                                entry.volume,
+                                entry.number,
+                                entry.editor,
+                                entry.organization,
+                                entry.school,
+                                entry.institution,
+                                entry.note,
+                                entry.howpublished,
+                                entry.series,
+                                entry.abstract
+                            ]
+                                .filter(Boolean)               // remove undefined/null
+                                .join(' ')
+                                .toLowerCase();
+
+                            return terms.every(term => combinedText.includes(term));
                         })
                         .map((entryObj, idx) => (
-                            <BibEntryCard key={`bib-${idx}`} type={entryObj.type} entry={entryObj.entry} />
+                            <BibEntryCard
+                                key={`bib-${idx}`}
+                                type={entryObj.type}
+                                entry={entryObj.entry}
+                            />
                         ))}
 
                 </Layout>

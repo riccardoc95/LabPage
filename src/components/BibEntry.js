@@ -44,6 +44,54 @@ const BibEntryCard = ({ type, entry }) => {
 
     const [expanded, setExpanded] = useState(false);
 
+    const [copied, setCopied] = useState(false);
+
+    const copyCitation = () => {
+        const bibKey = `${author ? author.split(/[\s,]+/)[0] : 'unknown'}${year || ''}`;
+
+        // Build key-value pairs dynamically
+        const fields = {
+            title,
+            author,
+            year,
+            journal,
+            publisher,
+            booktitle,
+            address,
+            pages,
+            volume,
+            number,
+            editor,
+            organization,
+            school,
+            institution,
+            note,
+            howpublished,
+            series,
+            doi,
+            link,
+            abstract
+        };
+
+        // Filter out empty fields
+        const fieldEntries = Object.entries(fields).filter(
+            ([, value]) => value !== undefined && value !== null && String(value).trim() !== ''
+        );
+
+        // Build BibTeX string
+        const bib = `@${type}{${bibKey},\n` +
+            fieldEntries
+                .map(([key, value]) => `  ${key}={${value}}`)
+                .join(',\n') +
+            '\n}';
+
+        navigator.clipboard.writeText(bib).then(() => {
+            setCopied(true);
+            setTimeout(() => setCopied(false), 1500);
+        });
+    };
+
+
     const renderDetails = () => {
         switch (type.toLowerCase()) {
             case "article":
@@ -106,6 +154,13 @@ const BibEntryCard = ({ type, entry }) => {
                         </motion.p>
                     </AnimatePresence>
                 )}
+                <div className="mt-2 flex items-center gap-2">
+                <button
+                    onClick={(e) => { e.stopPropagation(); copyCitation(); }}
+                    className="mt-2 self-start text-xs px-2 py-1 rounded bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600 transition"
+                >
+                    {copied ? "Copied!" : "Copy citation"}
+                </button>
                 {(link || doi) && (
                     <Link
                         href={link || `https://doi.org/${doi}`}
@@ -116,6 +171,8 @@ const BibEntryCard = ({ type, entry }) => {
                         Read more →
                     </Link>
                 )}
+                </div>
+
             </div>
 
             {/* Right: Year */}
