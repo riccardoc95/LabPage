@@ -1,7 +1,7 @@
 import * as React from "react";
 
 import Image from "next/image";
-import teralab from "../../public/images/svgs/logo1_.svg";
+import teralab from "../../public/images/svgs/logo4.svg";
 
 export const TeraLabIcon = ({ className = "", ...rest }) => (
     <Image

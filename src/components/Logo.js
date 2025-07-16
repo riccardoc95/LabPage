@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from "next/image";
 
-import teralab from "../../public/images/svgs/logo1_.svg";
+import teralab from "../../public/images/svgs/logo4.svg";
 import {motion} from "framer-motion";
 const FramerImage = motion(Image);
 

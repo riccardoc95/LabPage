@@ -1,6 +1,8 @@
 import Link from "next/link";
 import React, { useState } from "react";
 import { useRouter } from "next/router";
+import { useEffect } from 'react';
+
 import {
     TeraLabIcon,
     TwitterIcon,
@@ -63,6 +65,17 @@ const Navbar = () => {
   const handleClick = () => {
     setIsOpen(!isOpen);
   };
+
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth >= 1280) { // 1280px è il breakpoint "xl" in Tailwind
+                setIsOpen(false);
+            }
+        };
+
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
 
 
