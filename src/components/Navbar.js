@@ -96,12 +96,12 @@ xl:px-16 md:px-12 sm:px-8
         <span className={`bg-dark dark:bg-light block h-0.5 w-6 rounded-sm transition-all duration-300 ease-out ${isOpen ? '-rotate-45 -translate-y-1' : 'translate-y-0.5'}`}></span>
       </button>
         {/* Left column */}
+        <Link href="/">
         <div className="w-full flex items-end xl:hidden">
-            <Link href="/">
                 <TeraLabIcon className="h-12 w-12 " />
-            </Link>
             TeraLab
         </div>
+        </Link>
 
         {/* Center column */}
       <nav className="flex items-center justify-center xl:hidden">
