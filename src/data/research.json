@@ -16,8 +16,8 @@
     "github": ""
   },
   {
-    "keywords": "Computational Biology, , Genomic Data Representation, Deep Learning”,
-    "title": “Advanced Computational Methods for Genomics”,
+    "keywords": "Computational Biology, , Genomic Data Representation, Deep Learning",
+    "title": "Advanced Computational Methods for Genomics",
     "summary": "This research area focuses on the analysis of different genomic data representations (from sequences to graphs) using approaches that extend beyond traditional combinatorial algorithms. The goal is to improve the depth, accuracy, and scalability of genomic analyses, ranging from querying large-scale genomic databases embedded in learned latent spaces to developing novel assembly techniques that exploit the geometry of assembly graphs. This work combines innovative mathematical formulations of genomic problems with state-of-the-art deep learning models to advance both theory and practical applications in genomics.",",
     "img": "",
     "link": "",
