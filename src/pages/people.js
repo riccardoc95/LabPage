@@ -48,10 +48,13 @@ export default function People({ data }) {
                                 scopus={person.scopus}
                                 gscholar={person.gscholar}
                                 github={person.github}
+                                link={person.link}
                             />
                         ))}
                     </div>
 
+                {level2?.length > 0 && (
+                    <>
 
                     <hr className="my-12 border-t-2 border-dark dark:border-light" />
                     <div className="grid grid-cols-12 gap-12 gap-y-12 xl:gap-x-12 lg:gap-x-12 md:gap-y-12 sm:gap-x-4">
@@ -71,6 +74,8 @@ export default function People({ data }) {
                         />
                         ))}
                     </div>
+                    </>
+                )}
                 </Layout>
             </main>
         </>

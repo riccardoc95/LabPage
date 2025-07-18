@@ -1,12 +1,13 @@
 import * as React from "react";
 
 import Image from "next/image";
-import teralab from "../../public/images/svgs/logo4.svg";
+import teralab from "../../public/images/svgs/logo4_.svg";
 
 export const TeraLabIcon = ({ className = "", ...rest }) => (
     <Image
         src={teralab}
         alt="TeraLab logo"
+        viewBox="0 0 24 24"
         className={className}
         {...rest}
     />

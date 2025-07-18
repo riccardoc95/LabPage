@@ -15,11 +15,22 @@ const PersonCard = ({
                         gscholar,
                         github,
                         twitter,
+                        link,
                     }) => (
     <div className="col-span-4 md:col-span-6 sm:col-span-6 flex flex-col items-center text-center gap-3 h-full">
 
         {/* Profile Image */}
-        <Link href="#">
+        {link ? (
+            <Link href={link}>
+                <FramerImage
+                    src={img}
+                    alt={name}
+                    className="w-32 h-32 rounded-full object-cover"
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ duration: 0.2 }}
+                />
+            </Link>
+        ) : (
             <FramerImage
                 src={img}
                 alt={name}
@@ -27,7 +38,8 @@ const PersonCard = ({
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.2 }}
             />
-        </Link>
+        )}
+
         <h2 className="text-lg sm:text-xl md:text-2xl font-bold">{name}</h2>
         {/* This wrapper will push name/role + social to bottom */}
         <div className="flex flex-col flex-grow justify-end w-full">

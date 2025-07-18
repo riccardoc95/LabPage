@@ -97,10 +97,11 @@ xl:px-16 md:px-12 sm:px-8
       </button>
 
         {/* Left column */}
-        <div className="w-full flex justify-between items-center xl:hidden">
+        <div className="w-full flex items-end xl:hidden">
             <Link href="/">
-                <TeraLabIcon className="h-15 w-20 " />
+                <TeraLabIcon className="h-12 w-12 " />
             </Link>
+            TeraLab
         </div>
 
         {/* Center column */}
