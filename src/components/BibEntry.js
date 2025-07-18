@@ -136,7 +136,7 @@ const BibEntryCard = ({ type, entry }) => {
                 <h3 className="font-bold text-lg dark:text-light">{title}</h3>
                 {author && (
                     <p className="text-sm text-gray-600 dark:text-gray-400">
-                        {formatAuthors(author, expanded ? Infinity : 3)}
+                        {formatAuthors(author, expanded ? Infinity : 5)}
                     </p>
                 )}
                 <p className="text-sm text-muted dark:text-gray-400">{renderDetails()}</p>
@@ -159,7 +159,7 @@ const BibEntryCard = ({ type, entry }) => {
                     onClick={(e) => { e.stopPropagation(); copyCitation(); }}
                     className="mt-2 self-start text-xs px-2 py-1 rounded bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600 transition"
                 >
-                    {copied ? "Copied!" : "Copy citation"}
+                    {copied ? "Copied!" : "bibtex"}
                 </button>
                 {(link || doi) && (
                     <Link
