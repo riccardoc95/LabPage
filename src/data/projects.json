@@ -1,47 +1,10 @@
 [
   {
     "type": "PH, TDA, Image Analysis",
-    "title": "Persistent Homology Computation on Images",
+    "title": "PixHomology",
     "summary": "PixHomology is an open-source software for image processing and analysis focused on persistent homology computation. It provides a set of tools and algorithms to explore the topological features of 2D images, enabling users to extract meaningful information about the underlying structures.",
     "img": "images/research/pixhomology.png",
     "link": "https://riccardoc95.github.io/PixHomology/",
-    "github": "https://github.com/riccardoc95/PixHomology",
-    "featured": false
-  },
-  {
-    "type": "Website",
-    "title": "Fashion Studio Website",
-    "summary": "",
-    "img": "",
-    "link": "/",
-    "github": "/",
-    "featured": false
-  },
-  {
-    "type": "Portfolio Website",
-    "title": "React Portfolio Website",
-    "summary": "Professional portfolio using React JS, Framer-motion",
-    "img": "",
-    "link": "/",
-    "github": "/",
-    "featured": true
-  },
-  {
-    "type": "Website Template",
-    "title": "Agency Website Template",
-    "summary": "",
-    "img": "",
-    "link": "/",
-    "github": "/",
-    "featured": false
-  },
-  {
-    "type": "Blog Website",
-    "title": "DevDreaming",
-    "summary": "",
-    "img": "",
-    "link": "/",
-    "github": "/",
-    "featured": false
+    "github": "https://github.com/riccardoc95/PixHomology"
   }
 ]

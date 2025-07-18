@@ -95,7 +95,6 @@ xl:px-16 md:px-12 sm:px-8
         <span className={`bg-dark dark:bg-light block h-0.5 w-6 rounded-sm transition-all duration-300 ease-out ${isOpen ? 'opacity-0' : 'opacity-100'} my-0.5`}></span>
         <span className={`bg-dark dark:bg-light block h-0.5 w-6 rounded-sm transition-all duration-300 ease-out ${isOpen ? '-rotate-45 -translate-y-1' : 'translate-y-0.5'}`}></span>
       </button>
-
         {/* Left column */}
         <div className="w-full flex items-end xl:hidden">
             <Link href="/">
