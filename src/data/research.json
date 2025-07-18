@@ -11,7 +11,7 @@
     "keywords": "Computational Genomics, High-Performance Computing, Bioinformatics",
     "title": "High-Performance Computational Genomics",
     "summary": "This research area explores the intersection of large-scale genomics and high-performance computing (HPC), focusing on the design of scalable and efficient computational workflows. Core topics include distributed computing application for variant detection across both linear and pangenomic reference models, and the development of accelerated pipelines for long-read sequencing data, including error correction. By harnessing parallel architectures and optimized algorithms, the goal is to extend the limits of genomic data processing, enabling faster, deeper, and more comprehensive analyses at unprecedented scales.",
-    "img: "images/research/blank.png",
+    "img": "images/research/blank.png",
     "link": "",
     "github": ""
 }
