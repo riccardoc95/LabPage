@@ -21,7 +21,56 @@ module.exports = {
         primary: "#B63E96", // 240,86,199 #F056C7
         primaryDark: "#58E6D9", // 80,230,217
         secondary: "#6C7A89",
-        secondaryDark: "#AAB7B8"
+        secondaryDark: "#AAB7B8",
+        homeBack: "#75aabf",
+        homeBackDark: "#0B1F3F",
+
+        // Logo palette
+        logoBlue1: "#00619c",
+        logoBlue2: "#02335f",
+        logoBlue3: "#033e6c",
+        logoBlue4: "#036097",
+        logoBlue5: "#047dbb",
+        logoBlue6: "#066ca2",
+        logoBlue7: "#0789c6",
+        logoBlue8: "#199bd3",
+        logoBlue9: "#2a8dbc",
+        logoBlue10: "#358dac",
+        logoBlue11: "#3a9dce",
+        logoBlue12: "#4a94b2",
+        logoBlue13: "#75aabf",
+        logoBlue14: "#90bdd4",
+        logoBlue15: "#acd3dd",
+        logoBlue16: "#b0c87f",
+        logoBlue17: "#bfc9bb",
+
+        logoGreen1: "#1f824b",
+        logoGreen2: "#83b197",
+        logoGreen3: "#aaccd1",
+
+        logoYellow1: "#a1c14c",
+        logoYellow2: "#afc87f",
+        logoYellow3: "#f7cf31",
+        logoYellow4: "#f7df75",
+
+        logoOrange1: "#e97b2c",
+
+        logoRed1: "#e12a2a",
+        logoRed2: "#e45652",
+        logoRed3: "#e46665",
+
+        logoPeach1: "#eaa6a3",
+        logoPeach2: "#ebd8d1",
+        logoPeach3: "#ecc2bb",
+
+        logoCream1: "#e8ecd3",
+        logoCream2: "#e8efd9",
+
+        logoSand1: "#c4aa9c",
+        logoSand2: "#c6b2a5",
+        logoSand3: "#d2c9bb",
+
+        logoLight1: "#f9eee6"
       },
       animation: {
         "spin-slow": "spin 8s linear infinite",

@@ -19,15 +19,18 @@ export default function Home() {
 
             <TransitionEffect/>
 
+            {/* Sezione del logo con sfondo differente */}
+            <div className="w-full bg-homeBack dark:bg-homeBackDark py-32  text-dark dark:text-light">
+                <Link href="/" className="w-full flex justify-center">
+                    <Logo className="w-64 h-auto md:w-48 sm:w-40"/>
+                </Link>
+                <h1 className="text-6xl font-bold text-center mb-8">Welcome to TeraLab</h1>
+                <h2 className="text-4xl font-bold text-center mb-8">HPC for Statistics and AI</h2>
+            </div>
+
+            {/* Contenuto principale */}
             <article className="min-h-screen bg-light dark:bg-dark text-dark dark:text-light">
                 <Layout className="pt-12 md:pt-16 sm:pt-10">
-
-                    {/* Logo */}
-                    <Link href="/" className="w-full flex justify-center mb-12">
-                        <Logo className="w-64 h-auto md:w-48 sm:w-40" />
-                    </Link>
-                    <h1 className="text-6xl font-bold text-center mb-8">Welcome to TeraLab </h1>
-                    <h1 className="text-4xl font-bold text-center mb-8">HPC for Statistics and AI</h1>
 
                     <section className="space-y-6 text-lg text-justify leading-relaxed">
                         <p>

@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { useRouter } from "next/router";
 import { useEffect } from 'react';
 
+
 import {
     TeraLabIcon,
     TwitterIcon,
@@ -59,7 +60,9 @@ const CustomMobileLink = ({ href, title, className = "", toggle }) => {
 
 
 const Navbar = () => {
-  const [mode, setMode] = useThemeSwitch();
+    const router = useRouter();
+    const isHome = router.pathname === "/";
+    const [mode, setMode] = useThemeSwitch();
     const [isOpen, setIsOpen] = useState(false);
 
   const handleClick = () => {
@@ -77,12 +80,31 @@ const Navbar = () => {
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
+    const [atTop, setAtTop] = useState(true);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setAtTop(window.scrollY === 0);
+        };
+
+        handleScroll(); // imposta subito lo stato corretto al primo render
+        window.addEventListener("scroll", handleScroll);
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
+
 
 
   return (
-    <header className="fixed grid grid-cols-3 items-center px-32 py-8 font-medium z-50 bg-light/95 dark:bg-dark/95 dark:text-light
-xl:px-16 md:px-12 sm:px-8
-    ">
+    <header className={`fixed w-full items-center font-medium z-50
+  xl:grid xl:grid-cols-3
+  flex justify-between px-6 py-4 md:px-12 xl:px-32
+  transition-colors duration-300
+  ${atTop ? "bg-transparent" : "bg-light dark:bg-dark shadow-md"} text-dark dark:text-light`}
+        >
+
       <button
         type="button"
         className=" flex-col items-center justify-center hidden xl:flex"
@@ -95,13 +117,20 @@ xl:px-16 md:px-12 sm:px-8
         <span className={`bg-dark dark:bg-light block h-0.5 w-6 rounded-sm transition-all duration-300 ease-out ${isOpen ? 'opacity-0' : 'opacity-100'} my-0.5`}></span>
         <span className={`bg-dark dark:bg-light block h-0.5 w-6 rounded-sm transition-all duration-300 ease-out ${isOpen ? '-rotate-45 -translate-y-1' : 'translate-y-0.5'}`}></span>
       </button>
+
         {/* Left column */}
-        <Link href="/">
-        <div className="w-full flex items-end xl:hidden">
-                <TeraLabIcon className="h-12 w-12 " />
-            TeraLab
+
+        <div className="flex items-end xl:hidden">
+            <div className="">
+                <Link href="/">
+                <TeraLabIcon className="h-16 w-16 " />
+                </Link>
+            </div>
+            <div className="">
+                TeraLab
+            </div>
         </div>
-        </Link>
+
 
         {/* Center column */}
       <nav className="flex items-center justify-center xl:hidden">
@@ -157,16 +186,18 @@ xl:px-16 md:px-12 sm:px-8
 
       <motion.div className="min-w-[70vw] sm:min-w-[90vw] flex justify-between items-center flex-col fixed top-1/2 left-1/2 -translate-x-1/2
       -translate-y-1/2
-      py-32 bg-dark/90 dark:bg-light/75 rounded-lg z-50 backdrop-blur-md
+      py-24 bg-dark/90 dark:bg-light/75 rounded-lg z-50 backdrop-blur-md
       "
       initial={{scale:0,x:"-50%",y:"-50%", opacity:0}}
       animate={{scale:1,opacity:1}}
       >
           <div className="flex-shrink-0">
               <Link href="/" className="flex items-center">
-                  <TeraLabIcon className="w-24 h-auto dark:invert"/>
+                  <TeraLabIcon className="w-24 h-auto"/>
               </Link>
-  </div>
+          </div>
+          <div className="flex-shrink-0">
+          </div>
       <nav className="flex items-center justify-center flex-col">
         <CustomMobileLink toggle={handleClick} className="ml-4 xl:m-0 xl:my-2" href="/" title="Home" />
         <CustomMobileLink toggle={handleClick} className="ml-4 xl:m-0 xl:my-2" href="/people" title="People" />

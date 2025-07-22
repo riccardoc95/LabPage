@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 const Footer = () => {
     return (
@@ -7,7 +8,10 @@ const Footer = () => {
 
                 {/* Left: */}
                 <div className="flex items-center gap-2">
-                    TeraLAB - Site Under Construction
+                    TeraLab @{" "}
+                    <Link href="https://www.dss.uniroma1.it/">
+                        Dipartimento di Scienze Statistiche - Sapienza
+                    </Link>
                 </div>
                 {/* Right: */}
                 <div className="text-sm text-gray-600 dark:text-gray-400 sm:mt-2">
