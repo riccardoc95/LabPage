@@ -32,7 +32,7 @@ export default function Research({ data }) {
               <h2 className="font-bold text-4xl w-full text-center my-16">
                   Research Area
               </h2>
-            <div className="grid grid-cols-12 gap-24 gap-y-32 xl:gap-x-16 lg:gap-x-8 md:gap-y-24 sm:gap-x-0">
+            <div className="grid grid-cols-12 gap-24 gap-y-2 xl:gap-x-16 lg:gap-x-8 md:gap-y-24 sm:gap-x-0">
               {data.map((project, index) => (
                   <div
                       key={index}

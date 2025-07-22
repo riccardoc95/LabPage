@@ -20,7 +20,7 @@ export default function Home() {
             <TransitionEffect/>
 
             {/* Sezione del logo con sfondo differente */}
-            <div className="w-full bg-homeBack dark:bg-homeBackDark py-32  text-dark dark:text-light">
+            <div className="w-full bg-homeBackDark py-32  text-light">
                 <Link href="/" className="w-full flex justify-center">
                     <Logo className="w-64 h-auto md:w-48 sm:w-40"/>
                 </Link>

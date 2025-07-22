@@ -102,7 +102,7 @@ const Navbar = () => {
   xl:grid xl:grid-cols-3
   flex justify-between px-6 py-4 md:px-12 xl:px-32
   transition-colors duration-300
-  ${atTop ? "bg-transparent" : "bg-light dark:bg-dark shadow-md"} text-dark dark:text-light`}
+  ${atTop ? `bg-transparent ${isHome ? "text-light": "text-dark"}` : "bg-light dark:bg-dark shadow-md "} text-dark dark:text-light`}
         >
 
       <button
