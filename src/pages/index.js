@@ -4,9 +4,15 @@ import Logo from "@/components/Logo";
 
 import TransitionEffect from "@/components/TransitionEffect";
 import Link from "next/link";
+import {useRef} from "react";
 
 
 export default function Home() {
+    const targetRef = useRef();
+
+    const handleImageClick = () => {
+        targetRef.current?.scrollIntoView({ behavior: 'smooth' });
+    };
     return (
         <>
             <Head>
@@ -21,15 +27,15 @@ export default function Home() {
 
             {/* Sezione del logo con sfondo differente */}
             <div className="w-full bg-homeBackDark py-32  text-light">
-                <Link href="/" className="w-full flex justify-center">
-                    <Logo className="w-64 h-auto md:w-48 sm:w-40"/>
-                </Link>
+                <div onClick={handleImageClick} className="w-full flex justify-center cursor-pointer">
+                    <Logo className="w-64 h-auto md:w-48 sm:w-40" />
+                </div>
                 <h1 className="text-6xl font-bold text-center mb-8">Welcome to TeraLab</h1>
                 <h2 className="text-4xl font-bold text-center mb-8">HPC for Statistics and AI</h2>
             </div>
 
             {/* Contenuto principale */}
-            <article className="min-h-screen bg-light dark:bg-dark text-dark dark:text-light">
+            <article ref={targetRef} className="min-h-screen bg-light dark:bg-dark text-dark dark:text-light">
                 <Layout className="pt-12 md:pt-16 sm:pt-10">
 
                     <section className="space-y-6 text-lg text-justify leading-relaxed">
