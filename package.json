@@ -9,7 +9,7 @@
     "scholarly": "pip install scholarly",
     "convert-bib": "node scripts/convert-bib.js",
     "build": "npm run convert-bib && next build",
-    "export": "next export"
+    "export": "next export && echo 'teralab.ai' > out/CNAME"
   },
   "dependencies": {
     "@orcid/bibtex-parse-js": "^0.0.25",

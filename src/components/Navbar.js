@@ -107,15 +107,15 @@ const Navbar = () => {
 
       <button
         type="button"
-        className=" flex-col items-center justify-center hidden xl:flex"
+        className=" flex-col items-center justify-center hidden xl:flex xl:col-start-2 "
         aria-controls="mobile-menu"
         aria-expanded={isOpen}
         onClick={handleClick}
       >
         <span className="sr-only">Open main menu</span>
-        <span className={`bg-dark dark:bg-light block h-0.5 w-6 rounded-sm transition-all duration-300 ease-out ${isOpen ? 'rotate-45 translate-y-1' : '-translate-y-0.5'}`}></span>
-        <span className={`bg-dark dark:bg-light block h-0.5 w-6 rounded-sm transition-all duration-300 ease-out ${isOpen ? 'opacity-0' : 'opacity-100'} my-0.5`}></span>
-        <span className={`bg-dark dark:bg-light block h-0.5 w-6 rounded-sm transition-all duration-300 ease-out ${isOpen ? '-rotate-45 -translate-y-1' : 'translate-y-0.5'}`}></span>
+        <span className={`${isHome && atTop ? "bg-light": "bg-dark"} dark:bg-light block h-0.5 w-6 rounded-sm transition-all duration-300 ease-out ${isOpen ? 'rotate-45 translate-y-1' : '-translate-y-0.5'}`}></span>
+        <span className={`${isHome && atTop ? "bg-light": "bg-dark"} dark:bg-light block h-0.5 w-6 rounded-sm transition-all duration-300 ease-out ${isOpen ? 'opacity-0' : 'opacity-100'} my-0.5`}></span>
+        <span className={`${isHome && atTop ? "bg-light": "bg-dark"} dark:bg-light block h-0.5 w-6 rounded-sm transition-all duration-300 ease-out ${isOpen ? '-rotate-45 -translate-y-1' : 'translate-y-0.5'}`}></span>
       </button>
 
         {/* Left column */}
