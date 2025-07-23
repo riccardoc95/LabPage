@@ -47,9 +47,9 @@ const PersonCard = ({
             {/* Name and Role */}
             <div>
 
-                <span className="block text-sm sm:text-base md:text-lg font-medium text-secondary dark:text-secondaryDark">
+                {/*<span className="block text-sm sm:text-base md:text-lg font-medium text-secondary dark:text-secondaryDark">
         {label || "\u00A0"}
-      </span>
+      </span>*/}
                 <span className="block text-sm sm:text-base md:text-lg font-medium text-primary dark:text-primaryDark">
         {role}
       </span>

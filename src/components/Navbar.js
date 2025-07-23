@@ -16,13 +16,28 @@ import { useThemeSwitch } from "./Hooks/useThemeSwitch";
 
 const CustomLink = ({ href, title, className = "" }) => {
   const router = useRouter();
+  const isHome = router.pathname === "/";
+  const [atTop, setAtTop] = useState(true);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setAtTop(window.scrollY === 0);
+        };
+
+        handleScroll(); // imposta subito lo stato corretto al primo render
+        window.addEventListener("scroll", handleScroll);
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
 
   return (
     <Link href={href} className={`${className}  rounded relative group xl:text-light xl:dark:text-dark`}>
       {title}
       <span
         className={`
-              inline-block h-[1px]  bg-dark absolute left-0 -bottom-0.5 
+              inline-block h-[1px] ${isHome && atTop ? "bg-light" : "bg-dark"} absolute left-0 -bottom-0.5 
               group-hover:w-full transition-[width] ease duration-300 dark:bg-light
               ${router.asPath === href ? "w-full" : " w-0"} xl:bg-light xl:dark:bg-dark
               `}
@@ -170,7 +185,7 @@ const Navbar = () => {
         <button
           onClick={() => setMode(mode === "light" ? "dark" : "light")}
           className={`w-6 h-6 ease ml-3 flex items-center justify-center rounded-full p-1  
-            ${mode === "light" ? "bg-dark  text-light" : "bg-light  text-dark"}
+            ${mode === "dark" || (isHome && atTop) ? "bg-light  text-dark" : "bg-dark  text-light"}
             `}
           aria-label="theme-switcher"
         >
@@ -234,7 +249,7 @@ const Navbar = () => {
         <button
           onClick={() => setMode(mode === "light" ? "dark" : "light")}
           className={`w-6 h-6 ease m-1 ml-3 sm:mx-1 flex items-center justify-center rounded-full p-1  
-            ${mode === "light" ? "bg-dark  text-light" : "bg-light  text-dark"}
+            ${mode === "light" ? "bg-light  text-dark" : "bg-dark  text-light"}
             `}
           aria-label="theme-switcher"
         >
