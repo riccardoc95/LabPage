@@ -165,7 +165,7 @@ const Navbar = () => {
         <motion.a
           target={"_blank"}
           className="w-6 mr-3"
-          href="#"
+          href="https://x.com/TeraLabSapienza"
           whileHover={{ y: -2 }}
           whileTap={{ scale: 0.9 }}
           aria-label="Checkout my twitter profile"
@@ -175,7 +175,7 @@ const Navbar = () => {
         <motion.a
           target={"_blank"}
           className="w-6 mx-3"
-          href="#"
+          href="https://www.linkedin.com/company/teralab-sapienza"
           whileHover={{ y: -2 }}
           whileTap={{ scale: 0.9 }}
           aria-label="Checkout my linkedin profile"
@@ -229,7 +229,7 @@ const Navbar = () => {
         <motion.a
           target={"_blank"}
           className="w-6 m-1 mr-3 sm:mx-1"
-          href="#"
+          href="https://x.com/TeraLabSapienza"
           whileHover={{ y: -2 }}
           whileTap={{ scale: 0.9 }}
           aria-label="Checkout my twitter profile"
@@ -239,7 +239,7 @@ const Navbar = () => {
         <motion.a
           target={"_blank"}
           className="w-6 m-1 mx-3 sm:mx-1"
-          href="#"
+          href="https://www.linkedin.com/company/teralab-sapienza"
           whileHover={{ y: -2 }}
           whileTap={{ scale: 0.9 }}
           aria-label="Checkout my linkedin profile"
