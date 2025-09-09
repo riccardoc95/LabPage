@@ -1,6 +1,7 @@
 import {motion} from "framer-motion";
 import Link from "next/link";
 import {GithubIcon} from "@/components/Icons";
+import ReactMarkdown from 'react-markdown';
 
 const FramerImage = motion.img;
 
@@ -27,9 +28,10 @@ const PostCard = ({title, date, link, description, img }) => {
                 </Link>
 
 
-                <p className="text-sm text-gray-700 dark:text-gray-300 max-w-xl">
-                    {description}
-                </p>
+                <div
+                    className="text-sm text-gray-700 dark:text-gray-300 justify-center text-left w-full"
+                    dangerouslySetInnerHTML={{ __html: description }}
+                />
 
                 <div className="mt-3 flex items-center gap-4">
                     {link && (
