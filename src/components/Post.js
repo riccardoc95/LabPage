@@ -15,7 +15,7 @@ const PostCard = ({title, date, link, description, img }) => {
             className="flex w-full max-w-4xl mx-auto items-center justify-center gap-6 py-6 border-b border-gray-300 dark:border-gray-700"
         >
             {/* Left: Image */}
-            <div className="flex-shrink-0 w-24 h-12 overflow-hidden">
+            <div className="flex-shrink-0 w-24 h-12 overflow-hidden md:hidden">
                 <span className="text-primary font-semibold dark:text-primaryDark text-sm min-w-[80px] pt-1">
                 {date}
                 </span>
@@ -26,6 +26,9 @@ const PostCard = ({title, date, link, description, img }) => {
                 <Link href={link} target="_blank" className="hover:underline underline-offset-4">
                     <h2 className="text-xl font-bold text-dark dark:text-light">{title}</h2>
                 </Link>
+                <span className="text-primary font-semibold dark:text-primaryDark text-sm min-w-[100px] pt-3 pb-3 hidden md:flex">
+                {date}
+                </span>
 
 
                 <div
