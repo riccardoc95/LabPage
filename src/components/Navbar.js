@@ -119,12 +119,13 @@ const Navbar = () => {
   transition-colors duration-300
   ${atTop ? `bg-transparent ${isHome ? "text-light": "text-dark"}` : "bg-light dark:bg-dark shadow-md "} text-dark dark:text-light`}
         >
-
-        <div className="flex-shrink-0">
+        {!(isHome && atTop) && (
+        <div className="justify-start hidden xl:flex flex-shrink-0">
             <Link href="/" className="flex items-center">
                 <TeraLabIcon className="w-14 h-auto"/>
             </Link>
         </div>
+        )}
 
       <button
         type="button"
