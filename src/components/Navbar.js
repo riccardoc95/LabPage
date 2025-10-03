@@ -120,6 +120,12 @@ const Navbar = () => {
   ${atTop ? `bg-transparent ${isHome ? "text-light": "text-dark"}` : "bg-light dark:bg-dark shadow-md "} text-dark dark:text-light`}
         >
 
+        <div className="flex-shrink-0">
+            <Link href="/" className="flex items-center">
+                <TeraLabIcon className="w-14 h-auto"/>
+            </Link>
+        </div>
+
       <button
         type="button"
         className=" flex-col items-center justify-center hidden xl:flex xl:col-start-2 "
@@ -206,11 +212,7 @@ const Navbar = () => {
       initial={{scale:0,x:"-50%",y:"-50%", opacity:0}}
       animate={{scale:1,opacity:1}}
       >
-          <div className="flex-shrink-0">
-              <Link href="/" className="flex items-center">
-                  <TeraLabIcon className="w-24 h-auto"/>
-              </Link>
-          </div>
+
           <div className="flex-shrink-0">
           </div>
       <nav className="flex items-center justify-center flex-col">
