@@ -12,7 +12,7 @@
     "title": "Recovering reproducible and local signal in genomic data",
     "summary": "This research area focuses on designing and implementing machine learning algorithms capable of disentangling reproducible and region-specific signals from high-dimensional and noisy genomic datasets. Specifically, genomic datasets are often large, noisy, and heterogeneous, which makes it difficult to distinguish true biological signals from random variation. By using advanced machine learning tools, the project seeks to recover local (region-specific) signals that are consistent across different experiments or datasets, improving the reliability and interpretability of genomic analyses.",
     "img": "",
-    "link": "",
+    "link": "https://biostatistics.sph.brown.edu/news/2023-01-23/devito-award",
     "github": ""
   },
   {
