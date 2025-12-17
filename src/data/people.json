@@ -4,7 +4,7 @@
     "name": "Umberto Ferraro Petrillo",
     "role": "Full Professor",
     "label": "",
-    "img": "images/people/upetrillo.jpg",
+    "img": "images/people/upetrillo.webp",
     "email": "umberto.ferraro@uniroma1.it",
     "linkedin": "umberto-ferraro-petrillo-1a1564a",
     "scopus": "57202363440",
@@ -30,7 +30,7 @@
     "level": 1,
     "name": "Lorenzo Di Rocco",
     "role": "Post Doc Researcher",
-    "img": "images/people/ldirocco.jpeg",
+    "img": "images/people/ldirocco.webp",
     "email": "lorenzo.dirocco@uniroma1.it",
     "linkedin": "lorenzo-di-rocco-93a93721a",
     "scopus": "",
@@ -58,7 +58,7 @@
     "level": 1,
     "name": "Roberta De Vito",
     "role": "Assistant Professor",
-    "img": "images/people/rdevito.png",
+    "img": "images/people/rdevito.webp",
     "email": "roberta.devito@uniroma1.it",
     "linkedin": "",
     "scopus": "",
@@ -84,16 +84,16 @@
 
   {
     "level": 1,
-    "name": "",
-    "role": "",
-    "img": "images/people/anonymous.jpg",
-    "email": "",
-    "linkedin": "",
+    "name": "Laura Testa",
+    "role": "PhD Student",
+    "img": "images/people/ltesta.png",
+    "email": "laura.testa@uniroma1.it",
+    "linkedin": "laura-testa-00b89b291",
     "scopus": "",
     "gscholar": "",
-    "github": "",
+    "github": "laura-testa",
     "twitter": "",
-    "link": ""
+    "link": "https://phd.uniroma1.it/web/LAURA-TESTA_nP1952104_IT.aspx"
   },
 
   {
