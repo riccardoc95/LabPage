@@ -70,6 +70,20 @@
 
   {
     "level": 1,
+    "name": "Marta Cipriani",
+    "role": "PhD Student",
+    "img": "images/people/mcipriani.webp",
+    "email": "marta.cipriani@uniroma1.it",
+    "linkedin": "marta-cipriani-b908bb1a1",
+    "scopus": "",
+    "gscholar": "tgAEK50AAAAJ",
+    "github": "",
+    "twitter": "",
+    "link": "https://phd.uniroma1.it/web/MARTA-CIPRIANI_nP1749933_EN.aspx"
+  },
+
+  {
+    "level": 1,
     "name": "Francesco Cellitti",
     "role": "PhD Student",
     "img": "images/people/fcellitti.jpg",
